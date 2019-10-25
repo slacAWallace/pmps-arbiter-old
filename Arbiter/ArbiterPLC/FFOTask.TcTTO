@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <Task Name="FFOTask" Id="{28fe13c7-6de6-421f-b525-cfbb5815a61a}">
+    <!--CycleTime in micro seconds.-->
+    <CycleTime>1000</CycleTime>
+    <Priority>1</Priority>
+    <PouCall>
+      <Name>Fast_Faults_Evaluate</Name>
+    </PouCall>
+    <TaskFBGuid>{3ac96fc9-e421-4e8e-b84b-6fdf44701d5b}</TaskFBGuid>
+    <Fb_init>{64972879-2cd2-45f7-8ca9-ad0055de69c4}</Fb_init>
+    <Fb_exit>{3aac905e-82c5-4b70-97c8-39b9147f935f}</Fb_exit>
+    <CycleUpdate>{c0194cdd-14c2-43e2-a9ae-738142f20fa5}</CycleUpdate>
+    <PostCycleUpdate>{658e40e3-2f74-41e6-b71e-a70da2cf09df}</PostCycleUpdate>
+  </Task>
+</TcPlcObject>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="MAIN" Id="{8a7bcfd2-1a2b-4363-aa47-c19391bf1f9c}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+
+	Initialize	:	BOOL := TRUE;
+	
+	AttemptReset : TON := (PT:=T#500ms);
+    
+    DisplayStats : FB_CXSetTextDisplayUSB := (nPort:=28928);
+    fbFormat   : FB_FormatString;
+    bError     : BOOL;
+    nErrID     : UDINT;
+    sOut       : T_MaxString;
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//Arbiter PLC
+
+IF Initialize THEN
+
+	g_fbArbiter1.A_Init();
+
+	Initialize := FALSE;
+END_IF
+
+MachineSimulation();
+		
+PMPS_Arbiter();
+
+
+AttemptReset(IN:=GVL.g_FastFaultOutput1.xOK, Q=>GVL.g_FastFaultOutput1.i_xReset);
+
+
+DisplayStats.bExecute S= NOT DisplayStats.bBusy AND NOT DisplayStats.bError;
+DisplayStats.bExecute R= DisplayStats.bBusy OR DisplayStats.bError;
+
+DisplayStats.sLine1 := 'PMPS-ARBITER-K';
+fbFormat(sFormat := 'Fast Faults: %d', arg1:=F_ULINT(PMPS_GVL.AccumulatedFF), sOut=>DisplayStats.sLine2, bError => bError, nErrID => nErrID ); 
+
+DisplayStats(eMode:=E_CX2100_DisplayModesWr.eCX2100_WriteLines);]]></ST>
+    </Implementation>
+    <Action Name="Initialize" Id="{b0ee480a-3d4b-001d-04c4-43cdc47895c8}">
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Action>
+  </POU>
+</TcPlcObject>
