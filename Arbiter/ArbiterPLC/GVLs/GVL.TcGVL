@@ -12,7 +12,7 @@ VAR_GLOBAL
 	
 	//Example implementation of the FFO
     {attribute 'pytmc' := '
-    pv: ARBITER:K:FFO
+    pv: ARBITER:K:FF1
     '}
 	{attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
 	g_FastFaultOutput1	:	FB_HardwareFFOutput;
