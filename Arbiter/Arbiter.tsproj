@@ -3,7 +3,7 @@
 	<Project ProjectGUID="{93521787-93A9-4579-9452-4FE41D8BA1BA}" TargetNetId="172.21.148.135.1.1" RelativeTargetNetId="true" RelativeIpAddresses="true" ShowHideConfigurations="#x306">
 		<System>
 			<Tasks>
-				<Task Id="3" Priority="20" CycleTime="500000" AmsPort="350" AdtTasks="true">
+				<Task Id="3" Priority="2" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
 				</Task>
 				<Task Id="4" Priority="1" CycleTime="10000" AmsPort="351" AdtTasks="true">

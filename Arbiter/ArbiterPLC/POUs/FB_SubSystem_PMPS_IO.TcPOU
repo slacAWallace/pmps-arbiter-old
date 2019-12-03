@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="FB_SubSystem_PMPS_IO" Id="{1a7d9761-dced-4384-823d-a5e0b037bf80}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK FB_SubSystem_PMPS_IO
+    <Declaration><![CDATA[(* Exchanges preemption requests and current beam state with subsystems in arbiter
+network.
+
+2019-12-2, A. Wallace
+
+*)
+FUNCTION_BLOCK FB_SubSystem_PMPS_IO
 VAR_INPUT
 	RequestingSystemID	:	DWORD := PMPS_GVL.EXCLUDED_ASSERTION_ID; // System ID for making requests to the supreme arbiter
     Reset : BOOL;

@@ -46,6 +46,8 @@
 		</Box>
 		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="4" MaxSwitchFrames="160">
 			<SyncUnit Name="alt" NoDeleteIfUnused="true"/>
+			<SyncUnit Name="SubSys1" NoDeleteIfUnused="true"/>
+			<SyncUnit Name="SubSys2" NoDeleteIfUnused="true"/>
 		</EtherCAT>
 	</Device>
 </TcSmItem>

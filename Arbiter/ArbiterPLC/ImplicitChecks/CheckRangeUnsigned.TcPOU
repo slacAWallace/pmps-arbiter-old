@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="CheckRangeUnsigned" Id="{1038e7e5-be5d-46fc-8f8b-bf566e5c2b95}" SpecialFunc="CheckRangeUnsigned">
+    <Declaration><![CDATA[// Implicitly generated code : DO NOT EDIT
+FUNCTION CheckRangeUnsigned : UDINT
+VAR_INPUT
+	value, lower, upper: UDINT;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Implicitly generated code : Only an Implementation suggestion
+{noflow}
+IF (value < lower) THEN
+	CheckRangeUnsigned := lower;
+ELSIF(value > upper) THEN
+	CheckRangeUnsigned := upper;
+ELSE
+	CheckRangeUnsigned := value;
+END_IF
+{flow}]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

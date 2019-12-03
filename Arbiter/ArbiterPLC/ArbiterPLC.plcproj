@@ -20,6 +20,19 @@
     <Compile Include="GVLs\GVL.TcGVL">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GVLs\GVL_CheckBounds.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="ImplicitChecks\CheckBounds.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ImplicitChecks\CheckRangeSigned.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ImplicitChecks\CheckRangeUnsigned.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
@@ -45,6 +58,7 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
+    <Folder Include="ImplicitChecks" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
@@ -52,10 +66,6 @@
     <PlaceholderReference Include="LCLS General">
       <DefaultResolution>LCLS General, * (SLAC)</DefaultResolution>
       <Namespace>LCLS_General</Namespace>
-    </PlaceholderReference>
-    <PlaceholderReference Include="PMPS">
-      <DefaultResolution>PMPS, * (SLAC - LCLS)</DefaultResolution>
-      <Namespace>PMPS</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="Tc2_MC2">
       <DefaultResolution>Tc2_MC2, * (Beckhoff Automation GmbH)</DefaultResolution>
@@ -88,15 +98,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PinnedGlobalDataType Include="ST_BeamParams" />
-  </ItemGroup>
-  <ItemGroup>
     <PlaceholderResolution Include="LCLS General">
       <Resolution>LCLS General, * (SLAC)</Resolution>
     </PlaceholderResolution>
-    <PlaceholderResolution Include="PMPS">
-      <Resolution>PMPS, * (SLAC - LCLS)</Resolution>
-    </PlaceholderResolution>
+  </ItemGroup>
+  <ItemGroup>
+    <LibraryReference Include="PMPS,0.0.0,SLAC - LCLS">
+      <Namespace>PMPS</Namespace>
+    </LibraryReference>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>

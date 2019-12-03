@@ -45,7 +45,7 @@
 			</Hides>
 		</DataType>
 		<DataType>
-			<Name GUID="{D3E9F7EC-BE3A-47D6-8804-AFFA5F03D770}">ST_BeamParams</Name>
+			<Name GUID="{B1DD5164-AE05-4422-BC6E-97C093227129}">ST_BeamParams</Name>
 			<BitSize>1760</BitSize>
 			<SubItem>
 				<Name>fAtt</Name>
@@ -58,6 +58,12 @@
 				<Default>
 					<Value>100</Value>
 				</Default>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: Attenuationsssss; io: i;</Value>
+					</Property>
+				</Properties>
 			</SubItem>
 			<SubItem>
 				<Name>nBeamClass</Name>
@@ -142,7 +148,8 @@
 				<BitOffs>1728</BitOffs>
 			</SubItem>
 			<Hides>
-				<Hide GUID="{100E5D1B-E254-4ADE-9CA3-ED8293E49A42}"/>
+				<Hide GUID="{3232C2FC-0648-4AAD-A7AF-541E2EBECBDC}"/>
+				<Hide GUID="{078A262F-53C8-4CB9-9A4D-746175A3B383}"/>
 			</Hides>
 		</DataType>
 		<DataType>
@@ -176,8 +183,8 @@
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.fbSubSys1_Requestor.i_RequestedBP</Name>
-					<Type GUID="{D3E9F7EC-BE3A-47D6-8804-AFFA5F03D770}">ST_BeamParams</Type>
+					<Name>PMPS_Arbiter.fbSubSys1_PMPS_IO.i_RequestedBP</Name>
+					<Type GUID="{B1DD5164-AE05-4422-BC6E-97C093227129}">ST_BeamParams</Type>
 					<SubVar>
 						<Name>fAtt</Name>
 						<Comment>
@@ -216,29 +223,29 @@
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.fbSubSys1_Requestor.i_Connected</Name>
+					<Name>PMPS_Arbiter.fbSubSys1_PMPS_IO.i_Connected</Name>
 					<Comment>
 						<![CDATA[ SYNC Inputs^External device not connected !!! Doesn't really work.]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.fbSubSys1_Requestor.i_WcState</Name>
+					<Name>PMPS_Arbiter.fbSubSys1_PMPS_IO.i_WcState</Name>
 					<Comment>
 						<![CDATA[ WcState^WcState]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.fbSubSys1_Requestor.i_TxPDOState</Name>
+					<Name>PMPS_Arbiter.fbSubSys1_PMPS_IO.i_TxPDOState</Name>
 					<Comment>
 						<![CDATA[ SYNC Inputs^TxPDO state]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.fbSubSys2_Requestor.i_RequestedBP</Name>
-					<Type GUID="{D3E9F7EC-BE3A-47D6-8804-AFFA5F03D770}">ST_BeamParams</Type>
+					<Name>PMPS_Arbiter.fbSubSys2_PMPS_IO.i_RequestedBP</Name>
+					<Type GUID="{B1DD5164-AE05-4422-BC6E-97C093227129}">ST_BeamParams</Type>
 					<SubVar>
 						<Name>fAtt</Name>
 						<Comment>
@@ -277,21 +284,21 @@
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.fbSubSys2_Requestor.i_Connected</Name>
+					<Name>PMPS_Arbiter.fbSubSys2_PMPS_IO.i_Connected</Name>
 					<Comment>
 						<![CDATA[ SYNC Inputs^External device not connected !!! Doesn't really work.]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.fbSubSys2_Requestor.i_WcState</Name>
+					<Name>PMPS_Arbiter.fbSubSys2_PMPS_IO.i_WcState</Name>
 					<Comment>
 						<![CDATA[ WcState^WcState]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.fbSubSys2_Requestor.i_TxPDOState</Name>
+					<Name>PMPS_Arbiter.fbSubSys2_PMPS_IO.i_TxPDOState</Name>
 					<Comment>
 						<![CDATA[ SYNC Inputs^TxPDO state]]>
 					</Comment>
@@ -305,8 +312,8 @@
 					<Type GUID="{0B37E936-53FE-6A1D-9723-D7016BFD8546}">ARRAY [1..16] OF BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.fbSubSys1_Requestor.o_CurrentBP</Name>
-					<Type GUID="{D3E9F7EC-BE3A-47D6-8804-AFFA5F03D770}">ST_BeamParams</Type>
+					<Name>PMPS_Arbiter.fbSubSys1_PMPS_IO.o_CurrentBP</Name>
+					<Type GUID="{B1DD5164-AE05-4422-BC6E-97C093227129}">ST_BeamParams</Type>
 					<SubVar>
 						<Name>fAtt</Name>
 						<Comment>
@@ -345,8 +352,8 @@
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.fbSubSys2_Requestor.o_CurrentBP</Name>
-					<Type GUID="{D3E9F7EC-BE3A-47D6-8804-AFFA5F03D770}">ST_BeamParams</Type>
+					<Name>PMPS_Arbiter.fbSubSys2_PMPS_IO.o_CurrentBP</Name>
+					<Type GUID="{B1DD5164-AE05-4422-BC6E-97C093227129}">ST_BeamParams</Type>
 					<SubVar>
 						<Name>fAtt</Name>
 						<Comment>
@@ -383,6 +390,10 @@
 							<![CDATA[ Photon energy (calculated by undulator gap) ]]>
 						</Comment>
 					</SubVar>
+				</Var>
+				<Var>
+					<Name>PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES</Name>
+					<Type GUID="{0B37E936-53FE-6A1D-9723-D7016BFD8546}">ARRAY [1..16] OF BOOL</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
@@ -411,30 +422,115 @@
 					</OwnerB>
 				</OwnerA>
 			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2019-11-08T14:39:10">
+				<OwnerA Name="OutputSrc" Prefix="TIPC^ArbiterPLC^ArbiterPLC Instance" Type="2">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^PMPS_BC">
+						<Link VarA="PMPS_Arbiter.fbMPSInterface.dumb" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Output" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2019-11-26T08:47:54">
+				<OwnerA Name="InputDst" Prefix="TIPC^ArbiterPLC^ArbiterPLC Instance" Type="1">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EK1122)^SubSysPLC1">
+						<Link VarA="PMPS_Arbiter.fbSubSys1_Requestor.i_RequestedBP" InOutA="0" GuidA="{D3E9F7EC-BE3A-47D6-8804-AFFA5F03D770}" VarB="IO Inputs^RequestedBP" AutoLink="true" OldTypeA="ST_BeamParams" OldGuidA="{D3E9F7EC-BE3A-47D6-8804-AFFA5F03D770}" NewTypeA="ST_BeamParams" NewGuidA="{078A262F-53C8-4CB9-9A4D-746175A3B383}" RestoreInfo="TypeChanged" TypeA="ST_BeamParams" IdA="3"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EK1122)^SubSysPLC2">
+						<Link VarA="PMPS_Arbiter.fbSubSys2_Requestor.i_RequestedBP" InOutA="0" GuidA="{D3E9F7EC-BE3A-47D6-8804-AFFA5F03D770}" VarB="IO Inputs^RequestedBP" AutoLink="true" OldTypeA="ST_BeamParams" OldGuidA="{D3E9F7EC-BE3A-47D6-8804-AFFA5F03D770}" NewTypeA="ST_BeamParams" NewGuidA="{078A262F-53C8-4CB9-9A4D-746175A3B383}" RestoreInfo="TypeChanged" TypeA="ST_BeamParams" IdA="143"/>
+					</OwnerB>
+				</OwnerA>
+				<OwnerA Name="OutputSrc" Prefix="TIPC^ArbiterPLC^ArbiterPLC Instance" Type="2">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EK1122)^SubSysPLC1">
+						<Link VarA="PMPS_Arbiter.fbSubSys1_Requestor.o_CurrentBP" InOutA="1" GuidA="{D3E9F7EC-BE3A-47D6-8804-AFFA5F03D770}" VarB="IO Outputs^CurrentBP" AutoLink="true" OldTypeA="ST_BeamParams" OldGuidA="{D3E9F7EC-BE3A-47D6-8804-AFFA5F03D770}" NewTypeA="ST_BeamParams" NewGuidA="{078A262F-53C8-4CB9-9A4D-746175A3B383}" RestoreInfo="TypeChanged" TypeA="ST_BeamParams" IdA="300"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EK1122)^SubSysPLC2">
+						<Link VarA="PMPS_Arbiter.fbSubSys2_Requestor.o_CurrentBP" InOutA="1" GuidA="{D3E9F7EC-BE3A-47D6-8804-AFFA5F03D770}" VarB="IO Outputs^CurrentBP" AutoLink="true" OldTypeA="ST_BeamParams" OldGuidA="{D3E9F7EC-BE3A-47D6-8804-AFFA5F03D770}" NewTypeA="ST_BeamParams" NewGuidA="{078A262F-53C8-4CB9-9A4D-746175A3B383}" RestoreInfo="TypeChanged" TypeA="ST_BeamParams" IdA="437"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2019-12-02T15:13:02">
+				<OwnerA Name="InputDst" Prefix="TIPC^ArbiterPLC^ArbiterPLC Instance" Type="1">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EK1122)^SubSysPLC1">
+						<Link VarA="PMPS_Arbiter.fbSubSys1_Requestor.i_Connected" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="SYNC Inputs^External device not connected" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="PMPS_Arbiter.fbSubSys1_Requestor.i_RequestedBP" TypeA="ST_BeamParams" InOutA="0" GuidA="{B1DD5164-AE05-4422-BC6E-97C093227129}" VarB="IO Inputs^RequestedBP" AutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="PMPS_Arbiter.fbSubSys1_Requestor.i_TxPDOState" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="SYNC Inputs^TxPDO state" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="PMPS_Arbiter.fbSubSys1_Requestor.i_WcState" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="WcState^WcState" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EK1122)^SubSysPLC2">
+						<Link VarA="PMPS_Arbiter.fbSubSys2_Requestor.i_Connected" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="SYNC Inputs^External device not connected" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="PMPS_Arbiter.fbSubSys2_Requestor.i_RequestedBP" TypeA="ST_BeamParams" InOutA="0" GuidA="{B1DD5164-AE05-4422-BC6E-97C093227129}" VarB="IO Inputs^RequestedBP" AutoLink="true" RestoreInfo="ANotFound"/>
+						<Link VarA="PMPS_Arbiter.fbSubSys2_Requestor.i_TxPDOState" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="SYNC Inputs^TxPDO state" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+						<Link VarA="PMPS_Arbiter.fbSubSys2_Requestor.i_WcState" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="WcState^WcState" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+				<OwnerA Name="OutputSrc" Prefix="TIPC^ArbiterPLC^ArbiterPLC Instance" Type="2">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EK1122)^SubSysPLC1">
+						<Link VarA="PMPS_Arbiter.fbSubSys1_Requestor.o_CurrentBP" TypeA="ST_BeamParams" InOutA="1" GuidA="{B1DD5164-AE05-4422-BC6E-97C093227129}" VarB="IO Outputs^CurrentBP" AutoLink="true" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EK1122)^SubSysPLC2">
+						<Link VarA="PMPS_Arbiter.fbSubSys2_Requestor.o_CurrentBP" TypeA="ST_BeamParams" InOutA="1" GuidA="{B1DD5164-AE05-4422-BC6E-97C093227129}" VarB="IO Outputs^CurrentBP" AutoLink="true" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
 			<TaskPouOids>
+				<TaskPouOid Prio="2" OTCID="#x08502002"/>
 				<TaskPouOid Prio="1" OTCID="#x08502001"/>
-				<TaskPouOid Prio="20" OTCID="#x08502002"/>
 			</TaskPouOids>
 		</Instance>
 	</Project>
 	<Mappings>
 		<OwnerA Name="ArbiterPLC Instance">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^PMPS_BC">
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[10]" VarB="Channel 10^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[11]" VarB="Channel 11^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[12]" VarB="Channel 12^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[13]" VarB="Channel 13^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[14]" VarB="Channel 14^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[15]" VarB="Channel 15^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[16]" VarB="Channel 16^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[1]" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[2]" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[3]" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[4]" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[5]" VarB="Channel 5^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[6]" VarB="Channel 6^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[7]" VarB="Channel 7^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[8]" VarB="Channel 8^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[9]" VarB="Channel 9^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^PMPS_CLTS">
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[10]" VarB="Channel 10^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[11]" VarB="Channel 11^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[12]" VarB="Channel 12^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[13]" VarB="Channel 13^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[14]" VarB="Channel 14^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[15]" VarB="Channel 15^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[16]" VarB="Channel 16^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[1]" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[2]" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[3]" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[4]" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[5]" VarB="Channel 5^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[6]" VarB="Channel 6^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[7]" VarB="Channel 7^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[8]" VarB="Channel 8^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[9]" VarB="Channel 9^Output" AutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^PMPS_FFO">
 				<Link VarA="FFOTask Outputs^GVL.g_FastFaultOutput1.q_xFastFaultOut" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EK1122)^SubSysPLC1">
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys1_Requestor.i_Connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys1_Requestor.i_RequestedBP" VarB="IO Inputs^RequestedBP" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys1_Requestor.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys1_Requestor.i_WcState" VarB="WcState^WcState" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbSubSys1_Requestor.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys1_PMPS_IO.i_Connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys1_PMPS_IO.i_RequestedBP" VarB="IO Inputs^RequestedBP" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys1_PMPS_IO.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys1_PMPS_IO.i_WcState" VarB="WcState^WcState" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbSubSys1_PMPS_IO.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EK1122)^SubSysPLC2">
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys2_Requestor.i_Connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys2_Requestor.i_RequestedBP" VarB="IO Inputs^RequestedBP" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys2_Requestor.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys2_Requestor.i_WcState" VarB="WcState^WcState" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbSubSys2_Requestor.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys2_PMPS_IO.i_Connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys2_PMPS_IO.i_RequestedBP" VarB="IO Inputs^RequestedBP" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys2_PMPS_IO.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys2_PMPS_IO.i_WcState" VarB="WcState^WcState" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbSubSys2_PMPS_IO.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

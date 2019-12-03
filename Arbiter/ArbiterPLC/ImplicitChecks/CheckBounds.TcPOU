@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="CheckBounds" Id="{29a7318a-fd89-4202-b6f3-98337688b8e5}" SpecialFunc="CheckBounds">
+    <Declaration><![CDATA[// Implicitly generated code : DO NOT EDIT
+FUNCTION CheckBounds : DINT
+VAR_INPUT
+	index, lower, upper: DINT;
+END_VAR
+// User defined local variables
+VAR
+    sMessageLow   : STRING := 'CheckBounds: Index too low (%d)';
+    sMessageHigh  : STRING := 'CheckBounds: Index too high (%d)';
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Index too low
+IF index < lower THEN
+    CheckBounds := lower;
+    // Increase global counter
+    GVL_CheckBounds.nTooLow := GVL_CheckBounds.nTooLow + 1;
+    // Log message
+    ADSLOGDINT(msgCtrlMask := ADSLOG_MSGTYPE_WARN,
+               msgFmtStr   := sMessageLow,
+               dintArg     := index);
+
+// Index too high
+ELSIF index > upper THEN
+    CheckBounds := upper;
+    // Increase global counter
+    GVL_CheckBounds.nTooHigh := GVL_CheckBounds.nTooHigh + 1;
+    // Log message
+    ADSLOGDINT(msgCtrlMask := ADSLOG_MSGTYPE_WARN,
+               msgFmtStr   := sMessageHigh,
+               dintArg     := index);
+
+// Index OK
+ELSE 
+    CheckBounds := index;
+END_IF
+{flow}]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

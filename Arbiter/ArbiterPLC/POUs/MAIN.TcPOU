@@ -3,7 +3,6 @@
   <POU Name="MAIN" Id="{8a7bcfd2-1a2b-4363-aa47-c19391bf1f9c}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-
 	Initialize	:	BOOL := TRUE;
 	
 	AttemptReset : TON := (PT:=T#500ms);
@@ -12,7 +11,7 @@ VAR
     fbFormat   : FB_FormatString;
     bError     : BOOL;
     nErrID     : UDINT;
-    sOut       : T_MaxString;
+    sOut       : T_MaxString;   
 
 END_VAR
 ]]></Declaration>

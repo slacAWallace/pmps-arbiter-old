@@ -7,8 +7,8 @@ VAR
 	fbPhotonEnergyWatcher	:	FB_PhotonEnergyWatcher;
 	
 	fbMPSInterface	:	FB_BeamClassOutputs;
-	
-	fbBPRequestor	:	FB_BPRequestor;
+    
+    fbCuInterface	:	FB_CTLS_Outputs;
 	
 	(* Subsystem requests use this FB and a pragma link to pass their requests to the arbiter.
 	The fb is called on each cycle and updates the arbiter with the current BP set requested 
@@ -20,7 +20,7 @@ VAR
                                 .i_WcState:=TIIB[SubSysPLC1]^WcState^WcState;
                                 .i_TxPDOState:=TIIB[SubSysPLC1]^SYNC Inputs^TxPDO state;
                                 '}
-	fbSubSys1_Requestor : FB_SubSystem_PMPS_IO := (RequestingSystemID := 16#FF0F);
+	fbSubSys1_PMPS_IO : FB_SubSystem_PMPS_IO := (RequestingSystemID := 16#FF0F);
 	
 	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[SubSysPLC2]^IO Inputs^RequestedBP; 
                                 .o_CurrentBP:=TIIB[SubSysPLC2]^IO Outputs^CurrentBP;
@@ -28,18 +28,20 @@ VAR
                                 .i_WcState:=TIIB[SubSysPLC2]^WcState^WcState;
                                 .i_TxPDOState:=TIIB[SubSysPLC2]^SYNC Inputs^TxPDO state;
                                 '}
-	fbSubSys2_Requestor : FB_SubSystem_PMPS_IO := (RequestingSystemID := 16#FF10);
+	fbSubSys2_PMPS_IO : FB_SubSystem_PMPS_IO := (RequestingSystemID := 16#FF10);
 	
 	AttemptReset : TON := (PT:=T#1s);
+    
+    anothervar : bool;
 	
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
 // Updating arbiter with subsystem requests.
-fbSubSys1_Requestor(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+fbSubSys1_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
 
-fbSubSys2_Requestor(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+fbSubSys2_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
 
 // Example with attenuator peel-off
 //////////////////////////////////
@@ -49,6 +51,9 @@ ReqBP := g_fbArbiter1.GetArbitratedBP();
 
 // Request beam class
 fbMPSInterface(i_ArbiterBP := ReqBP);
+
+// Request Cu beam rate
+fbCuInterface(i_ArbiterBP := ReqBP);
 
 // Calculate the current eV word
 PMPS_GVL.stCurrentBeamParameters.neVRange := F_eVRangeCalculator(
