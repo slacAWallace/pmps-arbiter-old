@@ -20,6 +20,18 @@ VAR
 	
 	fbEcatDiag : FB_EcatDiagWrapper;
 
+	{attribute 'pytmc' := '
+		pv: Arbiter:Link:HGVPU
+		link: USEG:UNDH:
+	'}
+	fbHgvpu : FB_Hgvpu;
+	
+	{attribute 'pytmc' := '
+		pv: Arbiter:Link:SXU
+		link: USEG:UNDS:
+	'}
+	fbSxu : FB_SXU;
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
