@@ -42,9 +42,6 @@
     <Compile Include="POUs\FB_eVSimulator.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_SubSystem_PMPS_IO.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\MachineSimulation.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -63,10 +60,6 @@
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
-    <PlaceholderReference Include="LCLS General">
-      <DefaultResolution>LCLS General, * (SLAC)</DefaultResolution>
-      <Namespace>LCLS_General</Namespace>
-    </PlaceholderReference>
     <PlaceholderReference Include="Tc2_MC2">
       <DefaultResolution>Tc2_MC2, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_MC2</Namespace>
@@ -98,11 +91,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PlaceholderResolution Include="LCLS General">
-      <Resolution>LCLS General, * (SLAC)</Resolution>
-    </PlaceholderResolution>
-  </ItemGroup>
-  <ItemGroup>
+    <LibraryReference Include="LCLS General,0.0.0,SLAC">
+      <Namespace>LCLS_General</Namespace>
+    </LibraryReference>
     <LibraryReference Include="PMPS,0.0.0,SLAC - LCLS">
       <Namespace>PMPS</Namespace>
     </LibraryReference>

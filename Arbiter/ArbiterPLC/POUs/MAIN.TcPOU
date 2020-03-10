@@ -12,6 +12,11 @@ VAR
     bError     : BOOL;
     nErrID     : UDINT;
     sOut       : T_MaxString;   
+    
+    {attribute 'pytmc' := '
+		pv: TEST:LOGHANDLER:
+	'}
+	fbLogHandler	: FB_LogHandler;
 
 END_VAR
 ]]></Declaration>
@@ -19,8 +24,6 @@ END_VAR
       <ST><![CDATA[//Arbiter PLC
 
 IF Initialize THEN
-
-	g_fbArbiter1.A_Init();
 
 	Initialize := FALSE;
 END_IF
@@ -39,7 +42,11 @@ DisplayStats.bExecute R= DisplayStats.bBusy OR DisplayStats.bError;
 DisplayStats.sLine1 := 'PMPS-ARBITER-K';
 fbFormat(sFormat := 'Fast Faults: %d', arg1:=F_ULINT(PMPS_GVL.AccumulatedFF), sOut=>DisplayStats.sLine2, bError => bError, nErrID => nErrID ); 
 
-DisplayStats(eMode:=E_CX2100_DisplayModesWr.eCX2100_WriteLines);]]></ST>
+DisplayStats(eMode:=E_CX2100_DisplayModesWr.eCX2100_WriteLines);
+
+
+
+fbLogHandler();]]></ST>
     </Implementation>
     <Action Name="Initialize" Id="{b0ee480a-3d4b-001d-04c4-43cdc47895c8}">
       <Implementation>

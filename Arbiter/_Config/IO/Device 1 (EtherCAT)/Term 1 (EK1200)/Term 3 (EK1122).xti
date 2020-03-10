@@ -10,7 +10,7 @@
 		<Box File="SubSysPLC1.xti" Id="5">
 			<EtherCAT PortABoxInfo="#x03000003"/>
 		</Box>
-		<Box File="SubSysPLC2.xti" Id="4">
+		<Box File="SubSysPLC2.xti" Id="9">
 			<EtherCAT PortABoxInfo="#x01000003"/>
 		</Box>
 	</Box>

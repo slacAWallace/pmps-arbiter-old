@@ -1,4 +1,4 @@
-#!/reg/g/pcds/epics/R7.0.2-2.0/ioc/ads-ioc/v0.0.2/bin/rhel7-x86_64/adsIoc
+#!/reg/g/pcds/epics/ioc/common/ads-ioc/v0.1.5/bin/rhel7-x86_64/adsIoc
 
 < envPaths
 
@@ -15,7 +15,6 @@ epicsEnvSet("IOCSH_PS1", "$(IOCNAME)> " )
 # Register all support components
 dbLoadDatabase("$(ADS_IOC_TOP)/dbd/adsIoc.dbd")
 adsIoc_registerRecordDeviceDriver(pdbbase)
-adsSetLocalAddress(172.18.92.209.1.1)
 
 epicsEnvSet("ASYN_PORT",     "ASYN_PLC")
 epicsEnvSet("IPADDR",        "172.21.148.135")
