@@ -38,5 +38,9 @@ ELSE
 END_IF
 {flow}]]></ST>
     </Implementation>
+    <LineIds Name="CheckBounds">
+      <LineId Id="3" Count="23" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

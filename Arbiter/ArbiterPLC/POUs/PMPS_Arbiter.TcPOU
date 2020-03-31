@@ -84,8 +84,8 @@ fbPhotonEnergyWatcher(i_stCurrentBeamParams	:= PMPS_GVL.stCurrentBeamParameters,
 
 AttemptReset(IN:=fbPhotonEnergyWatcher.xPhotonEnergyWithinBounds, Q=>GVL.AttemptReset);
 
+// Trip a fast fault periodically
 testFF(io_fbFFHWO:= g_FastFaultOutput1);
-
 testFF.i_xOK := (cycle mod 1000) = 0;
 cycle := cycle + 1;
 
@@ -95,5 +95,12 @@ IF logging_active THEN
     g_FastFaultOutput1.ExecuteLogging();
 END_IF]]></ST>
     </Implementation>
+    <LineIds Name="PMPS_Arbiter">
+      <LineId Id="3" Count="25" />
+      <LineId Id="93" Count="0" />
+      <LineId Id="29" Count="1" />
+      <LineId Id="32" Count="6" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

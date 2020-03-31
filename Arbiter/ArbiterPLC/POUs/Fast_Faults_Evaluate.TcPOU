@@ -8,5 +8,8 @@ END_VAR
     <Implementation>
       <ST><![CDATA[g_FastFaultOutput1.EvaluateOutput(i_xVeto:=PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.L_Stopper.ST1]);]]></ST>
     </Implementation>
+    <LineIds Name="Fast_Faults_Evaluate">
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
