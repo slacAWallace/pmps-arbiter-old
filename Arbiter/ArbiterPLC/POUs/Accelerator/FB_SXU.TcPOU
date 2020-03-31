@@ -132,5 +132,9 @@ FOR iIndex := iLowBound TO iHighBound DO
     END_IF
 END_FOR]]></ST>
     </Implementation>
+    <LineIds Name="FB_SXU">
+      <LineId Id="3" Count="34" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

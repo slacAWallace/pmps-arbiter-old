@@ -132,5 +132,9 @@ END_FOR
 
 ]]></ST>
     </Implementation>
+    <LineIds Name="FB_Hgvpu">
+      <LineId Id="3" Count="35" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

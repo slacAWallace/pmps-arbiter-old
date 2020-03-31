@@ -25,5 +25,9 @@ END_VAR
       <ST><![CDATA[fbKDesired();
 fbKActual();]]></ST>
     </Implementation>
+    <LineIds Name="FB_UndulatorSegment">
+      <LineId Id="3" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

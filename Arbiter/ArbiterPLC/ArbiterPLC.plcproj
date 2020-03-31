@@ -37,6 +37,15 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Accelerator\FB_Hgvpu.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Accelerator\FB_SXU.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Accelerator\FB_UndulatorSegment.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Fast_Faults_Evaluate.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -57,6 +66,7 @@
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
     <Folder Include="ImplicitChecks" />
+    <Folder Include="POUs\Accelerator" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
