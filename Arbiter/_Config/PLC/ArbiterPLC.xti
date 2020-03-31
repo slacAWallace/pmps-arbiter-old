@@ -20,6 +20,14 @@
 			</Format>
 		</DataType>
 		<DataType>
+			<Name GUID="{BA024A79-2B25-4952-93E0-2828AA358656}" Namespace="Tc2_System" AutoDeleteType="true">T_AmsNetIdArr</Name>
+			<Comment>
+				<![CDATA[ TwinCAT AMS netID address bytes. ]]>
+			</Comment>
+			<BitSize>48</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</BaseType>
+		</DataType>
+		<DataType>
 			<Name GUID="{CD9A5CB4-772A-4C5D-92CC-8611A9FB1859}">ST_PMPS_Attenuator</Name>
 			<BitSize>48</BitSize>
 			<SubItem>
@@ -45,13 +53,13 @@
 			</Hides>
 		</DataType>
 		<DataType>
-			<Name GUID="{B1DD5164-AE05-4422-BC6E-97C093227129}">ST_BeamParams</Name>
-			<BitSize>1760</BitSize>
+			<Name GUID="{95EE78E5-EC39-42F1-A1EE-C5B10F8BDB57}">ST_BeamParams_IO</Name>
+			<BitSize>1856</BitSize>
 			<SubItem>
 				<Name>fAtt</Name>
 				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
 				<Comment>
-					<![CDATA[ Requested attenuation % ]]>
+					<![CDATA[  Requested pre-optic attenuation %  ]]>
 				</Comment>
 				<BitSize>32</BitSize>
 				<BitOffs>0</BitOffs>
@@ -61,21 +69,10 @@
 				<Properties>
 					<Property>
 						<Name>plcAttribute_pytmc</Name>
-						<Value>pv: Attenuationsssss; io: i;</Value>
+						<Value>pv: Attenuation
+        io: i</Value>
 					</Property>
 				</Properties>
-			</SubItem>
-			<SubItem>
-				<Name>nBeamClass</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
-				<Comment>
-					<![CDATA[ Machine parameters ]]>
-				</Comment>
-				<BitSize>8</BitSize>
-				<BitOffs>32</BitOffs>
-				<Default>
-					<Value>15</Value>
-				</Default>
 			</SubItem>
 			<SubItem>
 				<Name>nRate</Name>
@@ -84,10 +81,17 @@
 					<![CDATA[ Pulse-rate ]]>
 				</Comment>
 				<BitSize>32</BitSize>
-				<BitOffs>64</BitOffs>
+				<BitOffs>32</BitOffs>
 				<Default>
 					<Value>10</Value>
 				</Default>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: Rate
+        io: i</Value>
+					</Property>
+				</Properties>
 			</SubItem>
 			<SubItem>
 				<Name>fPP_mJ</Name>
@@ -96,23 +100,35 @@
 					<![CDATA[ Per pulse max energy (mJ) ]]>
 				</Comment>
 				<BitSize>32</BitSize>
-				<BitOffs>96</BitOffs>
+				<BitOffs>64</BitOffs>
 				<Default>
 					<Value>20</Value>
 				</Default>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: PulseEnergy
+        io: i</Value>
+					</Property>
+				</Properties>
 			</SubItem>
 			<SubItem>
 				<Name>neVRange</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
 				<Comment>
-					<![CDATA[ Valid photon energy ranges ]]>
+					<![CDATA[ Photon energy ranges ]]>
 				</Comment>
 				<BitSize>16</BitSize>
-				<BitOffs>128</BitOffs>
+				<BitOffs>96</BitOffs>
 				<Default>
 					<Value>65535</Value>
 				</Default>
 				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: PhotonEnergy
+        io: i</Value>
+					</Property>
 					<Property>
 						<Name>plcAttribute_displaymode</Name>
 						<Value>binary</Value>
@@ -120,37 +136,86 @@
 				</Properties>
 			</SubItem>
 			<SubItem>
-				<Name>reV</Name>
-				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
-				<Comment>
-					<![CDATA[ Photon energy (calculated by undulator gap) ]]>
-				</Comment>
-				<BitSize>32</BitSize>
-				<BitOffs>160</BitOffs>
-				<Default>
-					<Value>0</Value>
-				</Default>
-			</SubItem>
-			<SubItem>
 				<Name>astAttenuators</Name>
 				<Type GUID="{CD9A5CB4-772A-4C5D-92CC-8611A9FB1859}">ST_PMPS_Attenuator</Type>
 				<ArrayInfo>
-					<LBound>0</LBound>
+					<LBound>1</LBound>
 					<Elements>32</Elements>
 				</ArrayInfo>
+				<Comment>
+					<![CDATA[ Beamline attenuators ]]>
+				</Comment>
 				<BitSize>1536</BitSize>
-				<BitOffs>192</BitOffs>
+				<BitOffs>112</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: AuxAttenuator
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>aStoppers</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<ArrayInfo>
+					<LBound>1</LBound>
+					<Elements>16</Elements>
+				</ArrayInfo>
+				<Comment>
+					<![CDATA[ Stopper statuses ]]>
+				</Comment>
+				<BitSize>128</BitSize>
+				<BitOffs>1648</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: AuxAttenuator
+        io: i</Value>
+					</Property>
+				</Properties>
 			</SubItem>
 			<SubItem>
 				<Name>xValidToggle</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment>
+					<![CDATA[ Toggle for watchdog]]>
+				</Comment>
 				<BitSize>8</BitSize>
-				<BitOffs>1728</BitOffs>
+				<BitOffs>1776</BitOffs>
 			</SubItem>
-			<Hides>
-				<Hide GUID="{3232C2FC-0648-4AAD-A7AF-541E2EBECBDC}"/>
-				<Hide GUID="{078A262F-53C8-4CB9-9A4D-746175A3B383}"/>
-			</Hides>
+			<SubItem>
+				<Name>xValid</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment>
+					<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
+				</Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>1784</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: Valid
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>nCohortInt</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000B}">ULINT</Type>
+				<Comment>
+					<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
+				</Comment>
+				<BitSize>64</BitSize>
+				<BitOffs>1792</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: Attenuation
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
 		</DataType>
 		<DataType>
 			<Name GUID="{0B37E936-53FE-6A1D-9723-D7016BFD8546}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..16] OF BOOL</Name>
@@ -160,6 +225,9 @@
 				<LBound>1</LBound>
 				<Elements>16</Elements>
 			</ArrayInfo>
+			<Hides>
+				<Hide GUID="{131173DC-6470-4356-585E-803EE481BA89}"/>
+			</Hides>
 		</DataType>
 	</DataTypes>
 	<Project GUID="{4BCB16EF-5D13-4917-90A8-513A58E8B784}" Name="ArbiterPLC" PrjFilePath="..\..\ArbiterPLC\ArbiterPLC.plcproj" TmcFilePath="..\..\ArbiterPLC\ArbiterPLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
@@ -183,18 +251,57 @@
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
 				<Var>
+					<Name>MAIN.fbEcatDiag.wFrmXWcState</Name>
+					<Comment>
+						<![CDATA[ link to task related ethercat frame state (Frm1WcState)]]>
+					</Comment>
+					<Type>WORD</Type>
+				</Var>
+				<Var>
+					<Name>MAIN.fbEcatDiag.nEcMasterSlaveCount</Name>
+					<Comment>
+						<![CDATA[ link to SlaveCount of EtherCAT Master (Inputs)]]>
+					</Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>MAIN.fbEcatDiag.nEcMasterDevState</Name>
+					<Comment>
+						<![CDATA[ link to DevState of EtherCAT Master (Inputs)]]>
+					</Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>MAIN.fbEcatDiag.nEcMasterDeviceId</Name>
+					<Comment>
+						<![CDATA[ link to DevID of EtherCAT Master (InfoData)]]>
+					</Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>MAIN.fbEcatDiag.arrEcMasterNetId</Name>
+					<Comment>
+						<![CDATA[ link to NetID of EtherCAT Master (InfoData)]]>
+					</Comment>
+					<Type GUID="{BA024A79-2B25-4952-93E0-2828AA358656}" Namespace="Tc2_System">T_AmsNetIdArr</Type>
+				</Var>
+				<Var>
+					<Name>MAIN.fbEcatDiag.nEcMasterSlaveCountCfg</Name>
+					<Comment>
+						<![CDATA[ link to CfgSlaveCount of EtherCAT Master (InfoData)]]>
+					</Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
 					<Name>PMPS_Arbiter.fbSubSys1_PMPS_IO.i_RequestedBP</Name>
-					<Type GUID="{B1DD5164-AE05-4422-BC6E-97C093227129}">ST_BeamParams</Type>
+					<Comment>
+						<![CDATA[ Requested BP from subsystem]]>
+					</Comment>
+					<Type GUID="{95EE78E5-EC39-42F1-A1EE-C5B10F8BDB57}">ST_BeamParams_IO</Type>
 					<SubVar>
 						<Name>fAtt</Name>
 						<Comment>
-							<![CDATA[ Requested attenuation % ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nBeamClass</Name>
-						<Comment>
-							<![CDATA[ Machine parameters ]]>
+							<![CDATA[  Requested pre-optic attenuation %  ]]>
 						</Comment>
 					</SubVar>
 					<SubVar>
@@ -212,13 +319,37 @@
 					<SubVar>
 						<Name>neVRange</Name>
 						<Comment>
-							<![CDATA[ Valid photon energy ranges ]]>
+							<![CDATA[ Photon energy ranges ]]>
 						</Comment>
 					</SubVar>
 					<SubVar>
-						<Name>reV</Name>
+						<Name>astAttenuators</Name>
 						<Comment>
-							<![CDATA[ Photon energy (calculated by undulator gap) ]]>
+							<![CDATA[ Beamline attenuators ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>aStoppers</Name>
+						<Comment>
+							<![CDATA[ Stopper statuses ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValidToggle</Name>
+						<Comment>
+							<![CDATA[ Toggle for watchdog]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValid</Name>
+						<Comment>
+							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nCohortInt</Name>
+						<Comment>
+							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
 						</Comment>
 					</SubVar>
 				</Var>
@@ -244,18 +375,22 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>PMPS_Arbiter.fbSubSys1_PMPS_IO.i_TxPDOToggle</Name>
+					<Comment>
+						<![CDATA[ TxPDO toggle]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>PMPS_Arbiter.fbSubSys2_PMPS_IO.i_RequestedBP</Name>
-					<Type GUID="{B1DD5164-AE05-4422-BC6E-97C093227129}">ST_BeamParams</Type>
+					<Comment>
+						<![CDATA[ Requested BP from subsystem]]>
+					</Comment>
+					<Type GUID="{95EE78E5-EC39-42F1-A1EE-C5B10F8BDB57}">ST_BeamParams_IO</Type>
 					<SubVar>
 						<Name>fAtt</Name>
 						<Comment>
-							<![CDATA[ Requested attenuation % ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nBeamClass</Name>
-						<Comment>
-							<![CDATA[ Machine parameters ]]>
+							<![CDATA[  Requested pre-optic attenuation %  ]]>
 						</Comment>
 					</SubVar>
 					<SubVar>
@@ -273,13 +408,37 @@
 					<SubVar>
 						<Name>neVRange</Name>
 						<Comment>
-							<![CDATA[ Valid photon energy ranges ]]>
+							<![CDATA[ Photon energy ranges ]]>
 						</Comment>
 					</SubVar>
 					<SubVar>
-						<Name>reV</Name>
+						<Name>astAttenuators</Name>
 						<Comment>
-							<![CDATA[ Photon energy (calculated by undulator gap) ]]>
+							<![CDATA[ Beamline attenuators ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>aStoppers</Name>
+						<Comment>
+							<![CDATA[ Stopper statuses ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValidToggle</Name>
+						<Comment>
+							<![CDATA[ Toggle for watchdog]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValid</Name>
+						<Comment>
+							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nCohortInt</Name>
+						<Comment>
+							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
 						</Comment>
 					</SubVar>
 				</Var>
@@ -304,6 +463,13 @@
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
+				<Var>
+					<Name>PMPS_Arbiter.fbSubSys2_PMPS_IO.i_TxPDOToggle</Name>
+					<Comment>
+						<![CDATA[ TxPDO toggle]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
@@ -312,18 +478,19 @@
 					<Type GUID="{0B37E936-53FE-6A1D-9723-D7016BFD8546}">ARRAY [1..16] OF BOOL</Type>
 				</Var>
 				<Var>
+					<Name>PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES</Name>
+					<Type GUID="{0B37E936-53FE-6A1D-9723-D7016BFD8546}">ARRAY [1..16] OF BOOL</Type>
+				</Var>
+				<Var>
 					<Name>PMPS_Arbiter.fbSubSys1_PMPS_IO.o_CurrentBP</Name>
-					<Type GUID="{B1DD5164-AE05-4422-BC6E-97C093227129}">ST_BeamParams</Type>
+					<Comment>
+						<![CDATA[ Current BP set]]>
+					</Comment>
+					<Type GUID="{95EE78E5-EC39-42F1-A1EE-C5B10F8BDB57}">ST_BeamParams_IO</Type>
 					<SubVar>
 						<Name>fAtt</Name>
 						<Comment>
-							<![CDATA[ Requested attenuation % ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nBeamClass</Name>
-						<Comment>
-							<![CDATA[ Machine parameters ]]>
+							<![CDATA[  Requested pre-optic attenuation %  ]]>
 						</Comment>
 					</SubVar>
 					<SubVar>
@@ -341,29 +508,50 @@
 					<SubVar>
 						<Name>neVRange</Name>
 						<Comment>
-							<![CDATA[ Valid photon energy ranges ]]>
+							<![CDATA[ Photon energy ranges ]]>
 						</Comment>
 					</SubVar>
 					<SubVar>
-						<Name>reV</Name>
+						<Name>astAttenuators</Name>
 						<Comment>
-							<![CDATA[ Photon energy (calculated by undulator gap) ]]>
+							<![CDATA[ Beamline attenuators ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>aStoppers</Name>
+						<Comment>
+							<![CDATA[ Stopper statuses ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValidToggle</Name>
+						<Comment>
+							<![CDATA[ Toggle for watchdog]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValid</Name>
+						<Comment>
+							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nCohortInt</Name>
+						<Comment>
+							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
 						</Comment>
 					</SubVar>
 				</Var>
 				<Var>
 					<Name>PMPS_Arbiter.fbSubSys2_PMPS_IO.o_CurrentBP</Name>
-					<Type GUID="{B1DD5164-AE05-4422-BC6E-97C093227129}">ST_BeamParams</Type>
+					<Comment>
+						<![CDATA[ Current BP set]]>
+					</Comment>
+					<Type GUID="{95EE78E5-EC39-42F1-A1EE-C5B10F8BDB57}">ST_BeamParams_IO</Type>
 					<SubVar>
 						<Name>fAtt</Name>
 						<Comment>
-							<![CDATA[ Requested attenuation % ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nBeamClass</Name>
-						<Comment>
-							<![CDATA[ Machine parameters ]]>
+							<![CDATA[  Requested pre-optic attenuation %  ]]>
 						</Comment>
 					</SubVar>
 					<SubVar>
@@ -381,19 +569,39 @@
 					<SubVar>
 						<Name>neVRange</Name>
 						<Comment>
-							<![CDATA[ Valid photon energy ranges ]]>
+							<![CDATA[ Photon energy ranges ]]>
 						</Comment>
 					</SubVar>
 					<SubVar>
-						<Name>reV</Name>
+						<Name>astAttenuators</Name>
 						<Comment>
-							<![CDATA[ Photon energy (calculated by undulator gap) ]]>
+							<![CDATA[ Beamline attenuators ]]>
 						</Comment>
 					</SubVar>
-				</Var>
-				<Var>
-					<Name>PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES</Name>
-					<Type GUID="{0B37E936-53FE-6A1D-9723-D7016BFD8546}">ARRAY [1..16] OF BOOL</Type>
+					<SubVar>
+						<Name>aStoppers</Name>
+						<Comment>
+							<![CDATA[ Stopper statuses ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValidToggle</Name>
+						<Comment>
+							<![CDATA[ Toggle for watchdog]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValid</Name>
+						<Comment>
+							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nCohortInt</Name>
+						<Comment>
+							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
+						</Comment>
+					</SubVar>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
@@ -471,6 +679,13 @@
 					</OwnerB>
 				</OwnerA>
 			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2020-01-08T15:58:58">
+				<OwnerA Name="InputDst" Prefix="TIPC^ArbiterPLC^ArbiterPLC Instance" Type="1">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EK1122)^SubSysPLC2">
+						<Link VarA="PMPS_Arbiter.fbSubSys2_PMPS_IO.i_xNewRequest" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="IO Inputs^xNewRequest" AutoLink="true" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
 			<TaskPouOids>
 				<TaskPouOid Prio="2" OTCID="#x08502002"/>
 				<TaskPouOid Prio="1" OTCID="#x08502001"/>
@@ -479,6 +694,14 @@
 	</Project>
 	<Mappings>
 		<OwnerA Name="ArbiterPLC Instance">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)">
+				<Link VarA="PlcTask Inputs^MAIN.fbEcatDiag.arrEcMasterNetId" VarB="InfoData^AmsNetId" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^MAIN.fbEcatDiag.nEcMasterDevState" VarB="Inputs^DevState" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^MAIN.fbEcatDiag.nEcMasterDeviceId" VarB="InfoData^DevId" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^MAIN.fbEcatDiag.nEcMasterSlaveCount" VarB="Inputs^SlaveCount" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^MAIN.fbEcatDiag.nEcMasterSlaveCountCfg" VarB="InfoData^CfgSlaveCount" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^MAIN.fbEcatDiag.wFrmXWcState" VarB="Inputs^Frm1WcState" AutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^PMPS_BC">
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[10]" VarB="Channel 10^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[11]" VarB="Channel 11^Output" AutoLink="true"/>
@@ -497,40 +720,8 @@
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[8]" VarB="Channel 8^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[9]" VarB="Channel 9^Output" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^PMPS_CLTS">
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[10]" VarB="Channel 10^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[11]" VarB="Channel 11^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[12]" VarB="Channel 12^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[13]" VarB="Channel 13^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[14]" VarB="Channel 14^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[15]" VarB="Channel 15^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[16]" VarB="Channel 16^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[1]" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[2]" VarB="Channel 2^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[3]" VarB="Channel 3^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[4]" VarB="Channel 4^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[5]" VarB="Channel 5^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[6]" VarB="Channel 6^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[7]" VarB="Channel 7^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[8]" VarB="Channel 8^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[9]" VarB="Channel 9^Output" AutoLink="true"/>
-			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^PMPS_FFO">
 				<Link VarA="FFOTask Outputs^GVL.g_FastFaultOutput1.q_xFastFaultOut" VarB="Channel 1^Output" AutoLink="true"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EK1122)^SubSysPLC1">
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys1_PMPS_IO.i_Connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys1_PMPS_IO.i_RequestedBP" VarB="IO Inputs^RequestedBP" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys1_PMPS_IO.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys1_PMPS_IO.i_WcState" VarB="WcState^WcState" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbSubSys1_PMPS_IO.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EK1122)^SubSysPLC2">
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys2_PMPS_IO.i_Connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys2_PMPS_IO.i_RequestedBP" VarB="IO Inputs^RequestedBP" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys2_PMPS_IO.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.fbSubSys2_PMPS_IO.i_WcState" VarB="WcState^WcState" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbSubSys2_PMPS_IO.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

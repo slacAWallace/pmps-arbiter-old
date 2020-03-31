@@ -1,2055 +1,555 @@
-record(bi, "ARBITER:K:FFO:ClearFault_RBV"){
+record(longin, "@(IOC):LCLSGeneral:LogPort_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.i_xReset?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bo, "ARBITER:K:FFO:ClearFault"){
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.i_xReset=")
-}
-
-record(bi, "ARBITER:K:FFO:EnableVeto_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.i_xVeto?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bo, "ARBITER:K:FFO:EnableVeto"){
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.i_xVeto=")
-}
-
-record(bi, "ARBITER:K:FFO:FaultHWO_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.q_xFastFaultOut?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.xOK?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0001:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[1].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0002:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[2].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0003:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[3].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0004:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[4].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0005:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[5].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0006:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[6].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0007:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[7].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0008:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[8].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0009:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[9].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0010:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[10].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0011:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[11].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0012:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[12].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0013:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[13].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0014:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[14].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0015:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[15].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0016:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[16].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0017:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[17].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0018:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[18].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0019:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[19].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0020:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[20].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0021:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[21].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0022:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[22].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0023:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[23].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0024:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[24].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0025:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[25].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0026:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[26].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0027:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[27].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0028:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[28].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0029:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[29].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0030:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[30].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0031:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[31].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0032:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[32].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0033:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[33].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0034:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[34].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0035:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[35].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0036:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[36].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0037:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[37].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0038:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[38].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0039:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[39].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0040:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[40].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0041:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[41].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0042:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[42].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0043:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[43].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0044:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[44].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0045:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[45].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0046:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[46].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0047:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[47].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0048:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[48].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0049:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[49].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0050:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[50].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0051:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[51].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0052:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[52].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0053:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[53].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0054:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[54].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0055:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[55].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0056:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[56].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0057:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[57].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0058:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[58].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0059:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[59].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0060:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[60].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0061:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[61].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0062:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[62].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0063:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[63].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0064:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[64].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0065:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[65].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0066:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[66].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0067:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[67].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0068:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[68].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0069:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[69].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0070:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[70].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0071:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[71].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0072:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[72].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0073:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[73].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0074:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[74].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0075:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[75].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0076:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[76].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0077:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[77].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0078:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[78].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0079:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[79].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0080:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[80].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0081:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[81].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0082:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[82].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0083:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[83].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0084:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[84].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0085:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[85].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0086:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[86].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0087:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[87].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0088:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[88].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0089:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[89].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0090:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[90].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0091:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[91].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0092:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[92].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0093:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[93].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0094:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[94].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0095:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[95].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0096:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[96].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0097:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[97].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0098:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[98].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0099:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[99].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0100:InUse_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[100].InUse?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0001:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[1].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0002:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[2].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0003:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[3].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0004:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[4].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0005:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[5].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0006:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[6].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0007:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[7].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0008:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[8].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0009:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[9].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0010:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[10].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0011:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[11].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0012:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[12].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0013:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[13].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0014:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[14].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0015:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[15].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0016:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[16].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0017:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[17].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0018:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[18].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0019:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[19].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0020:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[20].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0021:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[21].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0022:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[22].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0023:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[23].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0024:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[24].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0025:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[25].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0026:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[26].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0027:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[27].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0028:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[28].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0029:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[29].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0030:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[30].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0031:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[31].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0032:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[32].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0033:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[33].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0034:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[34].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0035:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[35].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0036:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[36].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0037:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[37].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0038:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[38].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0039:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[39].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0040:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[40].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0041:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[41].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0042:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[42].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0043:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[43].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0044:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[44].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
-}
-
-record(bi, "ARBITER:K:FFO:FFArray:0045:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[45].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Logger.iLogPort?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
+  field(DESC, "The log host UDP port")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0046:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[46].State?")
+record(longout, "@(IOC):LCLSGeneral:LogPort"){
   field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Logger.iLogPort=")
+  field(DESC, "The log host UDP port")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0047:OK_RBV"){
+record(waveform, "@(IOC):LCLSGeneral:LogHost_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[47].State?")
-  field(DTYP, "asynInt32")
+  field(FTVL, "CHAR")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Logger.cLogHost?")
+  field(DTYP, "asynInt8ArrayIn")
   field(SCAN, "I/O Intr")
+  field(DESC, "The log host IP address")
+  field(NELM, "15")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0048:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[48].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
+record(waveform, "@(IOC):LCLSGeneral:LogHost"){
+  field(FTVL, "CHAR")
+  field(DTYP, "asynInt8ArrayOut")
+  field(DESC, "The log host IP address")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Logger.cLogHost=")
+  field(NELM, "15")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0049:OK_RBV"){
+record(bi, "TEST:LOGHANDLER::ADS:LogToVisualStudio_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
   field(ZNAM, "Zero")
   field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[49].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcAdsListener.bLogToVisualStudio?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0050:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
+record(bo, "TEST:LOGHANDLER::ADS:LogToVisualStudio"){
   field(ZNAM, "Zero")
   field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[50].State?")
   field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcAdsListener.bLogToVisualStudio=")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0051:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::ADS:MessagesSent_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[51].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcAdsListener.nCntMessagesSent?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0052:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::ADS:AlarmsRaised_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[52].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcAdsListener.nCntAlarmsRaised?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0053:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::ADS:AlarmsConfirmed_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[53].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcAdsListener.nCntAlarmsConfirmed?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0054:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::ADS:AlarmsCleared_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[54].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcAdsListener.nCntAlarmsCleared?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0055:OK_RBV"){
+record(mbbi, "TEST:LOGHANDLER::ADS:MinSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[55].State?")
+  field(ZRVL, "0")
+  field(ZRST, "TCEVENTSEVERITY_Verbose")
+  field(ONVL, "1")
+  field(ONST, "TCEVENTSEVERITY_Info")
+  field(TWVL, "2")
+  field(TWST, "TCEVENTSEVERITY_Warning")
+  field(THVL, "3")
+  field(THST, "TCEVENTSEVERITY_Error")
+  field(FRVL, "4")
+  field(FRST, "TCEVENTSEVERITY_Critical")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcAdsListener.eMinSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0056:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[56].State?")
+record(mbbo, "TEST:LOGHANDLER::ADS:MinSeverity"){
+  field(ZRVL, "0")
+  field(ZRST, "TCEVENTSEVERITY_Verbose")
+  field(ONVL, "1")
+  field(ONST, "TCEVENTSEVERITY_Info")
+  field(TWVL, "2")
+  field(TWST, "TCEVENTSEVERITY_Warning")
+  field(THVL, "3")
+  field(THST, "TCEVENTSEVERITY_Error")
+  field(FRVL, "4")
+  field(FRST, "TCEVENTSEVERITY_Critical")
   field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcAdsListener.eMinSeverity=")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0057:OK_RBV"){
+record(bi, "TEST:LOGHANDLER::Router:LogToVisualStudio_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
   field(ZNAM, "Zero")
   field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[57].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRouterListener.bLogToVisualStudio?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0058:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
+record(bo, "TEST:LOGHANDLER::Router:LogToVisualStudio"){
   field(ZNAM, "Zero")
   field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[58].State?")
   field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRouterListener.bLogToVisualStudio=")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0059:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::Router:MessagesSent_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[59].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRouterListener.nCntMessagesSent?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0060:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::Router:AlarmsRaised_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[60].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRouterListener.nCntAlarmsRaised?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0061:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::Router:AlarmsConfirmed_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[61].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRouterListener.nCntAlarmsConfirmed?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0062:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::Router:AlarmsCleared_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[62].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRouterListener.nCntAlarmsCleared?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0063:OK_RBV"){
+record(mbbi, "TEST:LOGHANDLER::Router:MinSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[63].State?")
+  field(ZRVL, "0")
+  field(ZRST, "TCEVENTSEVERITY_Verbose")
+  field(ONVL, "1")
+  field(ONST, "TCEVENTSEVERITY_Info")
+  field(TWVL, "2")
+  field(TWST, "TCEVENTSEVERITY_Warning")
+  field(THVL, "3")
+  field(THST, "TCEVENTSEVERITY_Error")
+  field(FRVL, "4")
+  field(FRST, "TCEVENTSEVERITY_Critical")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRouterListener.eMinSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0064:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[64].State?")
+record(mbbo, "TEST:LOGHANDLER::Router:MinSeverity"){
+  field(ZRVL, "0")
+  field(ZRST, "TCEVENTSEVERITY_Verbose")
+  field(ONVL, "1")
+  field(ONST, "TCEVENTSEVERITY_Info")
+  field(TWVL, "2")
+  field(TWST, "TCEVENTSEVERITY_Warning")
+  field(THVL, "3")
+  field(THST, "TCEVENTSEVERITY_Error")
+  field(FRVL, "4")
+  field(FRST, "TCEVENTSEVERITY_Critical")
   field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRouterListener.eMinSeverity=")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0065:OK_RBV"){
+record(bi, "TEST:LOGHANDLER::RTime:LogToVisualStudio_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
   field(ZNAM, "Zero")
   field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[65].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRTimeListener.bLogToVisualStudio?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0066:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
+record(bo, "TEST:LOGHANDLER::RTime:LogToVisualStudio"){
   field(ZNAM, "Zero")
   field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[66].State?")
   field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRTimeListener.bLogToVisualStudio=")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0067:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::RTime:MessagesSent_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[67].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRTimeListener.nCntMessagesSent?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0068:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::RTime:AlarmsRaised_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[68].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRTimeListener.nCntAlarmsRaised?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0069:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::RTime:AlarmsConfirmed_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[69].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRTimeListener.nCntAlarmsConfirmed?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0070:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::RTime:AlarmsCleared_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[70].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRTimeListener.nCntAlarmsCleared?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0071:OK_RBV"){
+record(mbbi, "TEST:LOGHANDLER::RTime:MinSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[71].State?")
+  field(ZRVL, "0")
+  field(ZRST, "TCEVENTSEVERITY_Verbose")
+  field(ONVL, "1")
+  field(ONST, "TCEVENTSEVERITY_Info")
+  field(TWVL, "2")
+  field(TWST, "TCEVENTSEVERITY_Warning")
+  field(THVL, "3")
+  field(THST, "TCEVENTSEVERITY_Error")
+  field(FRVL, "4")
+  field(FRST, "TCEVENTSEVERITY_Critical")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRTimeListener.eMinSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0072:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[72].State?")
+record(mbbo, "TEST:LOGHANDLER::RTime:MinSeverity"){
+  field(ZRVL, "0")
+  field(ZRST, "TCEVENTSEVERITY_Verbose")
+  field(ONVL, "1")
+  field(ONST, "TCEVENTSEVERITY_Info")
+  field(TWVL, "2")
+  field(TWST, "TCEVENTSEVERITY_Warning")
+  field(THVL, "3")
+  field(THST, "TCEVENTSEVERITY_Error")
+  field(FRVL, "4")
+  field(FRST, "TCEVENTSEVERITY_Critical")
   field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRTimeListener.eMinSeverity=")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0073:OK_RBV"){
+record(bi, "TEST:LOGHANDLER::System:LogToVisualStudio_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
   field(ZNAM, "Zero")
   field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[73].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcSystemListener.bLogToVisualStudio?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0074:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
+record(bo, "TEST:LOGHANDLER::System:LogToVisualStudio"){
   field(ZNAM, "Zero")
   field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[74].State?")
   field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcSystemListener.bLogToVisualStudio=")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0075:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::System:MessagesSent_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[75].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcSystemListener.nCntMessagesSent?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0076:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::System:AlarmsRaised_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[76].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcSystemListener.nCntAlarmsRaised?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0077:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::System:AlarmsConfirmed_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[77].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcSystemListener.nCntAlarmsConfirmed?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0078:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::System:AlarmsCleared_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[78].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcSystemListener.nCntAlarmsCleared?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0079:OK_RBV"){
+record(mbbi, "TEST:LOGHANDLER::System:MinSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[79].State?")
+  field(ZRVL, "0")
+  field(ZRST, "TCEVENTSEVERITY_Verbose")
+  field(ONVL, "1")
+  field(ONST, "TCEVENTSEVERITY_Info")
+  field(TWVL, "2")
+  field(TWST, "TCEVENTSEVERITY_Warning")
+  field(THVL, "3")
+  field(THST, "TCEVENTSEVERITY_Error")
+  field(FRVL, "4")
+  field(FRST, "TCEVENTSEVERITY_Critical")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcSystemListener.eMinSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0080:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[80].State?")
+record(mbbo, "TEST:LOGHANDLER::System:MinSeverity"){
+  field(ZRVL, "0")
+  field(ZRST, "TCEVENTSEVERITY_Verbose")
+  field(ONVL, "1")
+  field(ONST, "TCEVENTSEVERITY_Info")
+  field(TWVL, "2")
+  field(TWST, "TCEVENTSEVERITY_Warning")
+  field(THVL, "3")
+  field(THST, "TCEVENTSEVERITY_Error")
+  field(FRVL, "4")
+  field(FRST, "TCEVENTSEVERITY_Critical")
   field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcSystemListener.eMinSeverity=")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0081:OK_RBV"){
+record(bi, "TEST:LOGHANDLER::Windows:LogToVisualStudio_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
   field(ZNAM, "Zero")
   field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[81].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbWindowsListener.bLogToVisualStudio?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0082:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
+record(bo, "TEST:LOGHANDLER::Windows:LogToVisualStudio"){
   field(ZNAM, "Zero")
   field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[82].State?")
   field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbWindowsListener.bLogToVisualStudio=")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0083:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::Windows:MessagesSent_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[83].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbWindowsListener.nCntMessagesSent?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0084:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::Windows:AlarmsRaised_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[84].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbWindowsListener.nCntAlarmsRaised?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0085:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::Windows:AlarmsConfirmed_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[85].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbWindowsListener.nCntAlarmsConfirmed?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0086:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::Windows:AlarmsCleared_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[86].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbWindowsListener.nCntAlarmsCleared?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0087:OK_RBV"){
+record(mbbi, "TEST:LOGHANDLER::Windows:MinSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[87].State?")
+  field(ZRVL, "0")
+  field(ZRST, "TCEVENTSEVERITY_Verbose")
+  field(ONVL, "1")
+  field(ONST, "TCEVENTSEVERITY_Info")
+  field(TWVL, "2")
+  field(TWST, "TCEVENTSEVERITY_Warning")
+  field(THVL, "3")
+  field(THST, "TCEVENTSEVERITY_Error")
+  field(FRVL, "4")
+  field(FRST, "TCEVENTSEVERITY_Critical")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbWindowsListener.eMinSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0088:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[88].State?")
+record(mbbo, "TEST:LOGHANDLER::Windows:MinSeverity"){
+  field(ZRVL, "0")
+  field(ZRST, "TCEVENTSEVERITY_Verbose")
+  field(ONVL, "1")
+  field(ONST, "TCEVENTSEVERITY_Info")
+  field(TWVL, "2")
+  field(TWST, "TCEVENTSEVERITY_Warning")
+  field(THVL, "3")
+  field(THST, "TCEVENTSEVERITY_Error")
+  field(FRVL, "4")
+  field(FRST, "TCEVENTSEVERITY_Critical")
   field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbWindowsListener.eMinSeverity=")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0089:OK_RBV"){
+record(bi, "TEST:LOGHANDLER::LCLS:LogToVisualStudio_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
   field(ZNAM, "Zero")
   field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[89].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbLCLSListener.bLogToVisualStudio?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0090:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
+record(bo, "TEST:LOGHANDLER::LCLS:LogToVisualStudio"){
   field(ZNAM, "Zero")
   field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[90].State?")
   field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbLCLSListener.bLogToVisualStudio=")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0091:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::LCLS:MessagesSent_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[91].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbLCLSListener.nCntMessagesSent?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0092:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::LCLS:AlarmsRaised_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[92].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbLCLSListener.nCntAlarmsRaised?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0093:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::LCLS:AlarmsConfirmed_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[93].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbLCLSListener.nCntAlarmsConfirmed?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0094:OK_RBV"){
+record(longin, "TEST:LOGHANDLER::LCLS:AlarmsCleared_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[94].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbLCLSListener.nCntAlarmsCleared?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0095:OK_RBV"){
+record(mbbi, "TEST:LOGHANDLER::LCLS:MinSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[95].State?")
+  field(ZRVL, "0")
+  field(ZRST, "TCEVENTSEVERITY_Verbose")
+  field(ONVL, "1")
+  field(ONST, "TCEVENTSEVERITY_Info")
+  field(TWVL, "2")
+  field(TWST, "TCEVENTSEVERITY_Warning")
+  field(THVL, "3")
+  field(THST, "TCEVENTSEVERITY_Error")
+  field(FRVL, "4")
+  field(FRST, "TCEVENTSEVERITY_Critical")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbLCLSListener.eMinSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0096:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[96].State?")
+record(mbbo, "TEST:LOGHANDLER::LCLS:MinSeverity"){
+  field(ZRVL, "0")
+  field(ZRST, "TCEVENTSEVERITY_Verbose")
+  field(ONVL, "1")
+  field(ONST, "TCEVENTSEVERITY_Info")
+  field(TWVL, "2")
+  field(TWST, "TCEVENTSEVERITY_Warning")
+  field(THVL, "3")
+  field(THST, "TCEVENTSEVERITY_Error")
+  field(FRVL, "4")
+  field(FRST, "TCEVENTSEVERITY_Critical")
   field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbLCLSListener.eMinSeverity=")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0097:OK_RBV"){
+record(ai, "@(P):PhotonEnergy_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[97].State?")
-  field(DTYP, "asynInt32")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/PMPS_Arbiter.fPhotonEnergy?")
+  field(DTYP, "asynFloat64")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0098:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[98].State?")
-  field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
+record(ao, "@(P):PhotonEnergy"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PMPS_Arbiter.fPhotonEnergy=")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0099:OK_RBV"){
+record(longin, "@(P):PhotonEnergySeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[99].State?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/PMPS_Arbiter.iPhotonEnergySeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
 }
 
-record(bi, "ARBITER:K:FFO:FFArray:0100:OK_RBV"){
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL.g_FastFaultOutput1.astFFInfo[100].State?")
+record(longout, "@(P):PhotonEnergySeverity"){
   field(DTYP, "asynInt32")
-  field(SCAN, "I/O Intr")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PMPS_Arbiter.iPhotonEnergySeverity=")
 }
 
 record(longin, "ARBITER:K:Arbiter1:AssertionPool:Entries:0000:Key_RBV"){

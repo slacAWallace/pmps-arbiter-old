@@ -9,7 +9,7 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[// reV Simulator
-fbeVSimulator(eV => fbMachine.i_reV);
+fbeVSimulator();
 
 // Machine simulator
 fbMachine(
@@ -18,7 +18,11 @@ fbMachine(
 	i_xFault	:= NOT GVL.g_FastFaultOutput1.q_xFastFaultOut
 	);
 
-PMPS_GVL.stCurrentBeamParameters.neVRange := F_eVRangeCalculator(fbMachine.q_stMachineParams.reV, PMPS_GVL.stCurrentBeamParameters.neVRange);]]></ST>
+PMPS_GVL.stCurrentBeamParameters.neVRange := F_eVRangeCalculator(fbeVSimulator.eV, PMPS_GVL.stCurrentBeamParameters.neVRange);]]></ST>
     </Implementation>
+    <LineIds Name="MachineSimulation">
+      <LineId Id="3" Count="9" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

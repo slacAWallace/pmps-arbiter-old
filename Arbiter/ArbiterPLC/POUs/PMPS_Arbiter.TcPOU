@@ -20,19 +20,39 @@ VAR
                                 .i_WcState:=TIIB[SubSysPLC1]^WcState^WcState;
                                 .i_TxPDOState:=TIIB[SubSysPLC1]^SYNC Inputs^TxPDO state;
                                 '}
-	fbSubSys1_PMPS_IO : FB_SubSystem_PMPS_IO := (RequestingSystemID := 16#FF0F);
+	fbSubSys1_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF0F);
 	
-	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[SubSysPLC2]^IO Inputs^RequestedBP; 
+	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[SubSysPLC2]^IO Inputs^RequestedBP;
+                                .i_xNewRequest:=TIIB[SubSysPLC2]^IO Inputs^xNewRequest; 
                                 .o_CurrentBP:=TIIB[SubSysPLC2]^IO Outputs^CurrentBP;
                                 .i_Connected:=TIIB[SubSysPLC2]^SYNC Inputs^External device not connected;
                                 .i_WcState:=TIIB[SubSysPLC2]^WcState^WcState;
                                 .i_TxPDOState:=TIIB[SubSysPLC2]^SYNC Inputs^TxPDO state;
+                                .i_TxPDOToggle:=TIIB[SubSysPLC2]^SYNC Inputs^TxPDO toggle;
                                 '}
-	fbSubSys2_PMPS_IO : FB_SubSystem_PMPS_IO := (RequestingSystemID := 16#FF10);
+	fbSubSys2_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF10);
+    
+    fbBPRequestor : FB_BPRequestor;
 	
 	AttemptReset : TON := (PT:=T#1s);
     
     anothervar : bool;
+    testFF : FB_FastFault;
+    
+    logging_active : BOOL;
+    cycle : INT;
+    
+    {attribute 'pytmc' := '
+		pv: @(P):PhotonEnergy
+        link: ~
+	'}
+    fPhotonEnergy : REAL;
+    
+    {attribute 'pytmc' := '
+		pv: @(P):PhotonEnergySeverity
+        link: ~.SEVR
+	'}
+    iPhotonEnergySeverity : INT;
 	
 END_VAR
 ]]></Declaration>
@@ -47,18 +67,14 @@ fbSubSys2_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Re
 //////////////////////////////////
 
 // Beam parameter requestor
-ReqBP := g_fbArbiter1.GetArbitratedBP();
+fbBPRequestor(Arbiter:=GVL.g_fbArbiter1);
 
 // Request beam class
-fbMPSInterface(i_ArbiterBP := ReqBP);
+fbMPSInterface(nBeamClass := 5);
 
 // Request Cu beam rate
 fbCuInterface(i_ArbiterBP := ReqBP);
 
-// Calculate the current eV word
-PMPS_GVL.stCurrentBeamParameters.neVRange := F_eVRangeCalculator(
-	PMPS_GVL.stCurrentBeamParameters.reV,
-	PMPS_GVL.stCurrentBeamParameters.neVRange);
 
 // Keep an eye on the photon energy
 fbPhotonEnergyWatcher(i_stCurrentBeamParams	:= PMPS_GVL.stCurrentBeamParameters,
@@ -68,8 +84,23 @@ fbPhotonEnergyWatcher(i_stCurrentBeamParams	:= PMPS_GVL.stCurrentBeamParameters,
 
 AttemptReset(IN:=fbPhotonEnergyWatcher.xPhotonEnergyWithinBounds, Q=>GVL.AttemptReset);
 
+// Trip a fast fault periodically
+testFF(io_fbFFHWO:= g_FastFaultOutput1);
+testFF.i_xOK := (cycle mod 1000) = 0;
+cycle := cycle + 1;
 
-]]></ST>
+g_FastFaultOutput1.EvaluateVetos();
+
+IF logging_active THEN
+    g_FastFaultOutput1.ExecuteLogging();
+END_IF]]></ST>
     </Implementation>
+    <LineIds Name="PMPS_Arbiter">
+      <LineId Id="3" Count="25" />
+      <LineId Id="93" Count="0" />
+      <LineId Id="29" Count="1" />
+      <LineId Id="32" Count="6" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

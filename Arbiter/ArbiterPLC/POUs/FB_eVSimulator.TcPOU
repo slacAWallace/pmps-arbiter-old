@@ -38,5 +38,9 @@ eV := eV + NoiseLevel*LREAL_TO_REAL(NoiseRand.Num);
 NoiseRand();
 eV := LIMIT(0, ev - NoiseLevel*LREAL_TO_REAL(NoiseRand.Num), eVRange);]]></ST>
     </Implementation>
+    <LineIds Name="FB_eVSimulator">
+      <LineId Id="3" Count="13" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
