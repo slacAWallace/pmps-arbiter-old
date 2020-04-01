@@ -43,13 +43,13 @@ VAR
     cycle : INT;
     
     {attribute 'pytmc' := '
-		pv: @(P):PhotonEnergy
+		pv: @(PREFIX):PhotonEnergy
         link: ~
 	'}
     fPhotonEnergy : REAL;
     
     {attribute 'pytmc' := '
-		pv: @(P):PhotonEnergySeverity
+		pv: @(PREFIX):PhotonEnergySeverity
         link: ~.SEVR
 	'}
     iPhotonEnergySeverity : INT;
@@ -95,12 +95,5 @@ IF logging_active THEN
     g_FastFaultOutput1.ExecuteLogging();
 END_IF]]></ST>
     </Implementation>
-    <LineIds Name="PMPS_Arbiter">
-      <LineId Id="3" Count="25" />
-      <LineId Id="93" Count="0" />
-      <LineId Id="29" Count="1" />
-      <LineId Id="32" Count="6" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

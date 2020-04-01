@@ -1,4 +1,4 @@
-record(longin, "@(IOC):LCLSGeneral:LogPort_RBV"){
+record(longin, "@(PREFIX)LCLSGeneral:LogPort_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Logger.iLogPort?")
@@ -7,13 +7,13 @@ record(longin, "@(IOC):LCLSGeneral:LogPort_RBV"){
   field(DESC, "The log host UDP port")
 }
 
-record(longout, "@(IOC):LCLSGeneral:LogPort"){
+record(longout, "@(PREFIX)LCLSGeneral:LogPort"){
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Logger.iLogPort=")
   field(DESC, "The log host UDP port")
 }
 
-record(waveform, "@(IOC):LCLSGeneral:LogHost_RBV"){
+record(waveform, "@(PREFIX)LCLSGeneral:LogHost_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
   field(FTVL, "CHAR")
@@ -24,7 +24,7 @@ record(waveform, "@(IOC):LCLSGeneral:LogHost_RBV"){
   field(NELM, "15")
 }
 
-record(waveform, "@(IOC):LCLSGeneral:LogHost"){
+record(waveform, "@(PREFIX)LCLSGeneral:LogHost"){
   field(FTVL, "CHAR")
   field(DTYP, "asynInt8ArrayOut")
   field(DESC, "The log host IP address")
@@ -32,499 +32,2759 @@ record(waveform, "@(IOC):LCLSGeneral:LogHost"){
   field(NELM, "15")
 }
 
-record(bi, "TEST:LOGHANDLER::ADS:LogToVisualStudio_RBV"){
+record(ai, "Arbiter:Link:HGVPU:24:KDes:EPICSLink_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcAdsListener.bLogToVisualStudio?")
-  field(DTYP, "asynInt32")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_24.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(bo, "TEST:LOGHANDLER::ADS:LogToVisualStudio"){
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcAdsListener.bLogToVisualStudio=")
+record(ao, "Arbiter:Link:HGVPU:24:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_24.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::ADS:MessagesSent_RBV"){
+record(longin, "Arbiter:Link:HGVPU:24:KDes:EPICSLink:LinkSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcAdsListener.nCntMessagesSent?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_24.fbKDesired.iPLCInternalSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::ADS:AlarmsRaised_RBV"){
+record(longout, "Arbiter:Link:HGVPU:24:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_24.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:24:KAct:EPICSLink_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcAdsListener.nCntAlarmsRaised?")
-  field(DTYP, "asynInt32")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_24.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::ADS:AlarmsConfirmed_RBV"){
+record(ao, "Arbiter:Link:HGVPU:24:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_24.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:24:KAct:EPICSLink:LinkSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcAdsListener.nCntAlarmsConfirmed?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_24.fbKActual.iPLCInternalSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::ADS:AlarmsCleared_RBV"){
+record(longout, "Arbiter:Link:HGVPU:24:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_24.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:25:KDes:EPICSLink_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcAdsListener.nCntAlarmsCleared?")
-  field(DTYP, "asynInt32")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_25.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(mbbi, "TEST:LOGHANDLER::ADS:MinSeverity_RBV"){
+record(ao, "Arbiter:Link:HGVPU:25:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_25.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:25:KDes:EPICSLink:LinkSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZRVL, "0")
-  field(ZRST, "TCEVENTSEVERITY_Verbose")
-  field(ONVL, "1")
-  field(ONST, "TCEVENTSEVERITY_Info")
-  field(TWVL, "2")
-  field(TWST, "TCEVENTSEVERITY_Warning")
-  field(THVL, "3")
-  field(THST, "TCEVENTSEVERITY_Error")
-  field(FRVL, "4")
-  field(FRST, "TCEVENTSEVERITY_Critical")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcAdsListener.eMinSeverity?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_25.fbKDesired.iPLCInternalSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(mbbo, "TEST:LOGHANDLER::ADS:MinSeverity"){
-  field(ZRVL, "0")
-  field(ZRST, "TCEVENTSEVERITY_Verbose")
-  field(ONVL, "1")
-  field(ONST, "TCEVENTSEVERITY_Info")
-  field(TWVL, "2")
-  field(TWST, "TCEVENTSEVERITY_Warning")
-  field(THVL, "3")
-  field(THST, "TCEVENTSEVERITY_Error")
-  field(FRVL, "4")
-  field(FRST, "TCEVENTSEVERITY_Critical")
+record(longout, "Arbiter:Link:HGVPU:25:KDes:EPICSLink:LinkSeverity"){
   field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcAdsListener.eMinSeverity=")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_25.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(bi, "TEST:LOGHANDLER::Router:LogToVisualStudio_RBV"){
+record(ai, "Arbiter:Link:HGVPU:25:KAct:EPICSLink_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRouterListener.bLogToVisualStudio?")
-  field(DTYP, "asynInt32")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_25.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(bo, "TEST:LOGHANDLER::Router:LogToVisualStudio"){
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRouterListener.bLogToVisualStudio=")
+record(ao, "Arbiter:Link:HGVPU:25:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_25.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::Router:MessagesSent_RBV"){
+record(longin, "Arbiter:Link:HGVPU:25:KAct:EPICSLink:LinkSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRouterListener.nCntMessagesSent?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_25.fbKActual.iPLCInternalSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::Router:AlarmsRaised_RBV"){
+record(longout, "Arbiter:Link:HGVPU:25:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_25.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:26:KDes:EPICSLink_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRouterListener.nCntAlarmsRaised?")
-  field(DTYP, "asynInt32")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_26.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::Router:AlarmsConfirmed_RBV"){
+record(ao, "Arbiter:Link:HGVPU:26:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_26.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:26:KDes:EPICSLink:LinkSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRouterListener.nCntAlarmsConfirmed?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_26.fbKDesired.iPLCInternalSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::Router:AlarmsCleared_RBV"){
+record(longout, "Arbiter:Link:HGVPU:26:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_26.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:26:KAct:EPICSLink_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRouterListener.nCntAlarmsCleared?")
-  field(DTYP, "asynInt32")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_26.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(mbbi, "TEST:LOGHANDLER::Router:MinSeverity_RBV"){
+record(ao, "Arbiter:Link:HGVPU:26:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_26.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:26:KAct:EPICSLink:LinkSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZRVL, "0")
-  field(ZRST, "TCEVENTSEVERITY_Verbose")
-  field(ONVL, "1")
-  field(ONST, "TCEVENTSEVERITY_Info")
-  field(TWVL, "2")
-  field(TWST, "TCEVENTSEVERITY_Warning")
-  field(THVL, "3")
-  field(THST, "TCEVENTSEVERITY_Error")
-  field(FRVL, "4")
-  field(FRST, "TCEVENTSEVERITY_Critical")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRouterListener.eMinSeverity?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_26.fbKActual.iPLCInternalSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(mbbo, "TEST:LOGHANDLER::Router:MinSeverity"){
-  field(ZRVL, "0")
-  field(ZRST, "TCEVENTSEVERITY_Verbose")
-  field(ONVL, "1")
-  field(ONST, "TCEVENTSEVERITY_Info")
-  field(TWVL, "2")
-  field(TWST, "TCEVENTSEVERITY_Warning")
-  field(THVL, "3")
-  field(THST, "TCEVENTSEVERITY_Error")
-  field(FRVL, "4")
-  field(FRST, "TCEVENTSEVERITY_Critical")
+record(longout, "Arbiter:Link:HGVPU:26:KAct:EPICSLink:LinkSeverity"){
   field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRouterListener.eMinSeverity=")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_26.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(bi, "TEST:LOGHANDLER::RTime:LogToVisualStudio_RBV"){
+record(ai, "Arbiter:Link:HGVPU:27:KDes:EPICSLink_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRTimeListener.bLogToVisualStudio?")
-  field(DTYP, "asynInt32")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_27.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(bo, "TEST:LOGHANDLER::RTime:LogToVisualStudio"){
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRTimeListener.bLogToVisualStudio=")
+record(ao, "Arbiter:Link:HGVPU:27:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_27.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::RTime:MessagesSent_RBV"){
+record(longin, "Arbiter:Link:HGVPU:27:KDes:EPICSLink:LinkSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRTimeListener.nCntMessagesSent?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_27.fbKDesired.iPLCInternalSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::RTime:AlarmsRaised_RBV"){
+record(longout, "Arbiter:Link:HGVPU:27:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_27.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:27:KAct:EPICSLink_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRTimeListener.nCntAlarmsRaised?")
-  field(DTYP, "asynInt32")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_27.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::RTime:AlarmsConfirmed_RBV"){
+record(ao, "Arbiter:Link:HGVPU:27:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_27.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:27:KAct:EPICSLink:LinkSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRTimeListener.nCntAlarmsConfirmed?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_27.fbKActual.iPLCInternalSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::RTime:AlarmsCleared_RBV"){
+record(longout, "Arbiter:Link:HGVPU:27:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_27.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:29:KDes:EPICSLink_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRTimeListener.nCntAlarmsCleared?")
-  field(DTYP, "asynInt32")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_29.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(mbbi, "TEST:LOGHANDLER::RTime:MinSeverity_RBV"){
+record(ao, "Arbiter:Link:HGVPU:29:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_29.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:29:KDes:EPICSLink:LinkSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZRVL, "0")
-  field(ZRST, "TCEVENTSEVERITY_Verbose")
-  field(ONVL, "1")
-  field(ONST, "TCEVENTSEVERITY_Info")
-  field(TWVL, "2")
-  field(TWST, "TCEVENTSEVERITY_Warning")
-  field(THVL, "3")
-  field(THST, "TCEVENTSEVERITY_Error")
-  field(FRVL, "4")
-  field(FRST, "TCEVENTSEVERITY_Critical")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRTimeListener.eMinSeverity?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_29.fbKDesired.iPLCInternalSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(mbbo, "TEST:LOGHANDLER::RTime:MinSeverity"){
-  field(ZRVL, "0")
-  field(ZRST, "TCEVENTSEVERITY_Verbose")
-  field(ONVL, "1")
-  field(ONST, "TCEVENTSEVERITY_Info")
-  field(TWVL, "2")
-  field(TWST, "TCEVENTSEVERITY_Warning")
-  field(THVL, "3")
-  field(THST, "TCEVENTSEVERITY_Error")
-  field(FRVL, "4")
-  field(FRST, "TCEVENTSEVERITY_Critical")
+record(longout, "Arbiter:Link:HGVPU:29:KDes:EPICSLink:LinkSeverity"){
   field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcRTimeListener.eMinSeverity=")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_29.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(bi, "TEST:LOGHANDLER::System:LogToVisualStudio_RBV"){
+record(ai, "Arbiter:Link:HGVPU:29:KAct:EPICSLink_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcSystemListener.bLogToVisualStudio?")
-  field(DTYP, "asynInt32")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_29.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(bo, "TEST:LOGHANDLER::System:LogToVisualStudio"){
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcSystemListener.bLogToVisualStudio=")
+record(ao, "Arbiter:Link:HGVPU:29:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_29.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::System:MessagesSent_RBV"){
+record(longin, "Arbiter:Link:HGVPU:29:KAct:EPICSLink:LinkSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcSystemListener.nCntMessagesSent?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_29.fbKActual.iPLCInternalSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::System:AlarmsRaised_RBV"){
+record(longout, "Arbiter:Link:HGVPU:29:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_29.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:30:KDes:EPICSLink_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcSystemListener.nCntAlarmsRaised?")
-  field(DTYP, "asynInt32")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_30.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::System:AlarmsConfirmed_RBV"){
+record(ao, "Arbiter:Link:HGVPU:30:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_30.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:30:KDes:EPICSLink:LinkSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcSystemListener.nCntAlarmsConfirmed?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_30.fbKDesired.iPLCInternalSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::System:AlarmsCleared_RBV"){
+record(longout, "Arbiter:Link:HGVPU:30:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_30.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:30:KAct:EPICSLink_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcSystemListener.nCntAlarmsCleared?")
-  field(DTYP, "asynInt32")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_30.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(mbbi, "TEST:LOGHANDLER::System:MinSeverity_RBV"){
+record(ao, "Arbiter:Link:HGVPU:30:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_30.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:30:KAct:EPICSLink:LinkSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZRVL, "0")
-  field(ZRST, "TCEVENTSEVERITY_Verbose")
-  field(ONVL, "1")
-  field(ONST, "TCEVENTSEVERITY_Info")
-  field(TWVL, "2")
-  field(TWST, "TCEVENTSEVERITY_Warning")
-  field(THVL, "3")
-  field(THST, "TCEVENTSEVERITY_Error")
-  field(FRVL, "4")
-  field(FRST, "TCEVENTSEVERITY_Critical")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcSystemListener.eMinSeverity?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_30.fbKActual.iPLCInternalSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(mbbo, "TEST:LOGHANDLER::System:MinSeverity"){
-  field(ZRVL, "0")
-  field(ZRST, "TCEVENTSEVERITY_Verbose")
-  field(ONVL, "1")
-  field(ONST, "TCEVENTSEVERITY_Info")
-  field(TWVL, "2")
-  field(TWST, "TCEVENTSEVERITY_Warning")
-  field(THVL, "3")
-  field(THST, "TCEVENTSEVERITY_Error")
-  field(FRVL, "4")
-  field(FRST, "TCEVENTSEVERITY_Critical")
+record(longout, "Arbiter:Link:HGVPU:30:KAct:EPICSLink:LinkSeverity"){
   field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbTcSystemListener.eMinSeverity=")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_30.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(bi, "TEST:LOGHANDLER::Windows:LogToVisualStudio_RBV"){
+record(ai, "Arbiter:Link:HGVPU:31:KDes:EPICSLink_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbWindowsListener.bLogToVisualStudio?")
-  field(DTYP, "asynInt32")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_31.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(bo, "TEST:LOGHANDLER::Windows:LogToVisualStudio"){
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbWindowsListener.bLogToVisualStudio=")
+record(ao, "Arbiter:Link:HGVPU:31:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_31.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::Windows:MessagesSent_RBV"){
+record(longin, "Arbiter:Link:HGVPU:31:KDes:EPICSLink:LinkSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbWindowsListener.nCntMessagesSent?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_31.fbKDesired.iPLCInternalSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::Windows:AlarmsRaised_RBV"){
+record(longout, "Arbiter:Link:HGVPU:31:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_31.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:31:KAct:EPICSLink_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbWindowsListener.nCntAlarmsRaised?")
-  field(DTYP, "asynInt32")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_31.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::Windows:AlarmsConfirmed_RBV"){
+record(ao, "Arbiter:Link:HGVPU:31:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_31.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:31:KAct:EPICSLink:LinkSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbWindowsListener.nCntAlarmsConfirmed?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_31.fbKActual.iPLCInternalSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::Windows:AlarmsCleared_RBV"){
+record(longout, "Arbiter:Link:HGVPU:31:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_31.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:32:KDes:EPICSLink_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbWindowsListener.nCntAlarmsCleared?")
-  field(DTYP, "asynInt32")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_32.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(mbbi, "TEST:LOGHANDLER::Windows:MinSeverity_RBV"){
+record(ao, "Arbiter:Link:HGVPU:32:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_32.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:32:KDes:EPICSLink:LinkSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZRVL, "0")
-  field(ZRST, "TCEVENTSEVERITY_Verbose")
-  field(ONVL, "1")
-  field(ONST, "TCEVENTSEVERITY_Info")
-  field(TWVL, "2")
-  field(TWST, "TCEVENTSEVERITY_Warning")
-  field(THVL, "3")
-  field(THST, "TCEVENTSEVERITY_Error")
-  field(FRVL, "4")
-  field(FRST, "TCEVENTSEVERITY_Critical")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbWindowsListener.eMinSeverity?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_32.fbKDesired.iPLCInternalSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(mbbo, "TEST:LOGHANDLER::Windows:MinSeverity"){
-  field(ZRVL, "0")
-  field(ZRST, "TCEVENTSEVERITY_Verbose")
-  field(ONVL, "1")
-  field(ONST, "TCEVENTSEVERITY_Info")
-  field(TWVL, "2")
-  field(TWST, "TCEVENTSEVERITY_Warning")
-  field(THVL, "3")
-  field(THST, "TCEVENTSEVERITY_Error")
-  field(FRVL, "4")
-  field(FRST, "TCEVENTSEVERITY_Critical")
+record(longout, "Arbiter:Link:HGVPU:32:KDes:EPICSLink:LinkSeverity"){
   field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbWindowsListener.eMinSeverity=")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_32.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(bi, "TEST:LOGHANDLER::LCLS:LogToVisualStudio_RBV"){
+record(ai, "Arbiter:Link:HGVPU:32:KAct:EPICSLink_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbLCLSListener.bLogToVisualStudio?")
-  field(DTYP, "asynInt32")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_32.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(bo, "TEST:LOGHANDLER::LCLS:LogToVisualStudio"){
-  field(ZNAM, "Zero")
-  field(ONAM, "One")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbLCLSListener.bLogToVisualStudio=")
+record(ao, "Arbiter:Link:HGVPU:32:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_32.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::LCLS:MessagesSent_RBV"){
+record(longin, "Arbiter:Link:HGVPU:32:KAct:EPICSLink:LinkSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbLCLSListener.nCntMessagesSent?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_32.fbKActual.iPLCInternalSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::LCLS:AlarmsRaised_RBV"){
+record(longout, "Arbiter:Link:HGVPU:32:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_32.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:33:KDes:EPICSLink_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbLCLSListener.nCntAlarmsRaised?")
-  field(DTYP, "asynInt32")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_33.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::LCLS:AlarmsConfirmed_RBV"){
+record(ao, "Arbiter:Link:HGVPU:33:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_33.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:33:KDes:EPICSLink:LinkSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbLCLSListener.nCntAlarmsConfirmed?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_33.fbKDesired.iPLCInternalSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(longin, "TEST:LOGHANDLER::LCLS:AlarmsCleared_RBV"){
+record(longout, "Arbiter:Link:HGVPU:33:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_33.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:33:KAct:EPICSLink_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbLCLSListener.nCntAlarmsCleared?")
-  field(DTYP, "asynInt32")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_33.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
 }
 
-record(mbbi, "TEST:LOGHANDLER::LCLS:MinSeverity_RBV"){
+record(ao, "Arbiter:Link:HGVPU:33:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_33.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:33:KAct:EPICSLink:LinkSeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
-  field(ZRVL, "0")
-  field(ZRST, "TCEVENTSEVERITY_Verbose")
-  field(ONVL, "1")
-  field(ONST, "TCEVENTSEVERITY_Info")
-  field(TWVL, "2")
-  field(TWST, "TCEVENTSEVERITY_Warning")
-  field(THVL, "3")
-  field(THST, "TCEVENTSEVERITY_Error")
-  field(FRVL, "4")
-  field(FRST, "TCEVENTSEVERITY_Critical")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbLCLSListener.eMinSeverity?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_33.fbKActual.iPLCInternalSeverity?")
   field(DTYP, "asynInt32")
   field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(mbbo, "TEST:LOGHANDLER::LCLS:MinSeverity"){
-  field(ZRVL, "0")
-  field(ZRST, "TCEVENTSEVERITY_Verbose")
-  field(ONVL, "1")
-  field(ONST, "TCEVENTSEVERITY_Info")
-  field(TWVL, "2")
-  field(TWST, "TCEVENTSEVERITY_Warning")
-  field(THVL, "3")
-  field(THST, "TCEVENTSEVERITY_Error")
-  field(FRVL, "4")
-  field(FRST, "TCEVENTSEVERITY_Critical")
+record(longout, "Arbiter:Link:HGVPU:33:KAct:EPICSLink:LinkSeverity"){
   field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbLogHandler.fbLCLSListener.eMinSeverity=")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_33.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
 }
 
-record(ai, "@(P):PhotonEnergy_RBV"){
+record(ai, "Arbiter:Link:HGVPU:34:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_34.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:34:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_34.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:34:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_34.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:34:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_34.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:34:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_34.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:34:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_34.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:34:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_34.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:34:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_34.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:35:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_35.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:35:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_35.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:35:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_35.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:35:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_35.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:35:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_35.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:35:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_35.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:35:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_35.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:35:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_35.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:36:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_36.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:36:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_36.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:36:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_36.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:36:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_36.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:36:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_36.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:36:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_36.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:36:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_36.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:36:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_36.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:37:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_37.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:37:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_37.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:37:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_37.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:37:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_37.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:37:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_37.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:37:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_37.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:37:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_37.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:37:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_37.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:38:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_38.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:38:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_38.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:38:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_38.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:38:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_38.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:38:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_38.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:38:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_38.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:38:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_38.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:38:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_38.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:39:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_39.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:39:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_39.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:39:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_39.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:39:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_39.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:39:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_39.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:39:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_39.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:39:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_39.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:39:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_39.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:40:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_40.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:40:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_40.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:40:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_40.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:40:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_40.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:40:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_40.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:40:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_40.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:40:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_40.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:40:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_40.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:41:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_41.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:41:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_41.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:41:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_41.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:41:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_41.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:41:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_41.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:41:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_41.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:41:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_41.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:41:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_41.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:42:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_42.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:42:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_42.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:42:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_42.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:42:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_42.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:42:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_42.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:42:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_42.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:42:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_42.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:42:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_42.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:43:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_43.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:43:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_43.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:43:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_43.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:43:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_43.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:43:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_43.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:43:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_43.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:43:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_43.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:43:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_43.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:44:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_44.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:44:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_44.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:44:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_44.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:44:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_44.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:44:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_44.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:44:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_44.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:44:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_44.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:44:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_44.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:45:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_45.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:45:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_45.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:45:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_45.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:45:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_45.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:45:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_45.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:45:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_45.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:45:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_45.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:45:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_45.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:46:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_46.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:46:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_46.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:46:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_46.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:46:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_46.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:HGVPU:46:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_46.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:HGVPU:46:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_46.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:HGVPU:46:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_46.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:HGVPU:46:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbHgvpu.fbSegment_46.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:26:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_26.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:26:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_26.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:26:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_26.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:26:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_26.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:26:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_26.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:26:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_26.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:26:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_26.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:26:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_26.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:27:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_27.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:27:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_27.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:27:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_27.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:27:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_27.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:27:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_27.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:27:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_27.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:27:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_27.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:27:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_27.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:28:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_28.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:28:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_28.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:28:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_28.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:28:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_28.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:28:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_28.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:28:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_28.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:28:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_28.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:28:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_28.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:29:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_29.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:29:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_29.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:29:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_29.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:29:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_29.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:29:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_29.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:29:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_29.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:29:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_29.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:29:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_29.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:30:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_30.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:30:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_30.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:30:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_30.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:30:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_30.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:30:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_30.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:30:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_30.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:30:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_30.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:30:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_30.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:31:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_31.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:31:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_31.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:31:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_31.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:31:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_31.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:31:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_31.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:31:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_31.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:31:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_31.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:31:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_31.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:32:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_32.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:32:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_32.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:32:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_32.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:32:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_32.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:32:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_32.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:32:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_32.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:32:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_32.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:32:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_32.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:33:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_33.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:33:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_33.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:33:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_33.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:33:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_33.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:33:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_33.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:33:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_33.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:33:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_33.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:33:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_33.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:34:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_34.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:34:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_34.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:34:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_34.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:34:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_34.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:34:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_34.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:34:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_34.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:34:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_34.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:34:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_34.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:36:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_36.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:36:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_36.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:36:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_36.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:36:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_36.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:36:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_36.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:36:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_36.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:36:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_36.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:36:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_36.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:37:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_37.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:37:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_37.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:37:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_37.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:37:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_37.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:37:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_37.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:37:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_37.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:37:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_37.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:37:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_37.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:38:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_38.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:38:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_38.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:38:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_38.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:38:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_38.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:38:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_38.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:38:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_38.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:38:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_38.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:38:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_38.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:39:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_39.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:39:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_39.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:39:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_39.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:39:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_39.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:39:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_39.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:39:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_39.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:39:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_39.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:39:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_39.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:40:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_40.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:40:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_40.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:40:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_40.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:40:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_40.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:40:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_40.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:40:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_40.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:40:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_40.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:40:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_40.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:41:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_41.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:41:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_41.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:41:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_41.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:41:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_41.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:41:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_41.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:41:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_41.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:41:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_41.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:41:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_41.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:42:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_42.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:42:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_42.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:42:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_42.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:42:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_42.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:42:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_42.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:42:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_42.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:42:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_42.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:42:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_42.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:43:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_43.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:43:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_43.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:43:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_43.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:43:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_43.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:43:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_43.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:43:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_43.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:43:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_43.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:43:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_43.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:44:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_44.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:44:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_44.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:44:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_44.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:44:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_44.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:44:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_44.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:44:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_44.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:44:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_44.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:44:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_44.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:45:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_45.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:45:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_45.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:45:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_45.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:45:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_45.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:45:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_45.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:45:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_45.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:45:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_45.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:45:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_45.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:46:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_46.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:46:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_46.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:46:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_46.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:46:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_46.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:46:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_46.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:46:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_46.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:46:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_46.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:46:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_46.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:47:KDes:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_47.fbKDesired.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:47:KDes:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_47.fbKDesired.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:47:KDes:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_47.fbKDesired.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:47:KDes:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_47.fbKDesired.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "Arbiter:Link:SXU:47:KAct:EPICSLink_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(PREC, "3")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_47.fbKActual.fPLCInternalValue?")
+  field(DTYP, "asynFloat64")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(ao, "Arbiter:Link:SXU:47:KAct:EPICSLink"){
+  field(PREC, "3")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_47.fbKActual.fPLCInternalValue=")
+  field(DESC, "Internal variable used to monitor EPICS PV in PLC")
+}
+
+record(longin, "Arbiter:Link:SXU:47:KAct:EPICSLink:LinkSeverity_RBV"){
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_47.fbKActual.iPLCInternalSeverity?")
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(longout, "Arbiter:Link:SXU:47:KAct:EPICSLink:LinkSeverity"){
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/MAIN.fbSxu.fbSegment_47.fbKActual.iPLCInternalSeverity=")
+  field(DESC, "Internal variable used to monitor EPICS PV severity in PLC")
+}
+
+record(ai, "@(PREFIX):PhotonEnergy_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
   field(PREC, "3")
@@ -533,13 +2793,13 @@ record(ai, "@(P):PhotonEnergy_RBV"){
   field(SCAN, "I/O Intr")
 }
 
-record(ao, "@(P):PhotonEnergy"){
+record(ao, "@(PREFIX):PhotonEnergy"){
   field(PREC, "3")
   field(DTYP, "asynFloat64")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PMPS_Arbiter.fPhotonEnergy=")
 }
 
-record(longin, "@(P):PhotonEnergySeverity_RBV"){
+record(longin, "@(PREFIX):PhotonEnergySeverity_RBV"){
   field(PINI, "1")
   field(TSE, "-2")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/PMPS_Arbiter.iPhotonEnergySeverity?")
@@ -547,7 +2807,7 @@ record(longin, "@(P):PhotonEnergySeverity_RBV"){
   field(SCAN, "I/O Intr")
 }
 
-record(longout, "@(P):PhotonEnergySeverity"){
+record(longout, "@(PREFIX):PhotonEnergySeverity"){
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/PMPS_Arbiter.iPhotonEnergySeverity=")
 }
