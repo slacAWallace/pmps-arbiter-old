@@ -13,11 +13,7 @@ VAR
     nErrID     : UDINT;
     sOut       : T_MaxString;   
     
-    {attribute 'pytmc' := '
-		pv: TEST:LOGHANDLER:
-	'}
-	fbLogHandler	: FB_LogHandler;
-	
+	fbLogHandler : FB_LogHandler;
 	fbEcatDiag : FB_EcatDiagWrapper;
 
 	{attribute 'pytmc' := '
@@ -65,14 +61,5 @@ fbLogHandler();]]></ST>
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Action>
-    <LineIds Name="MAIN">
-      <LineId Id="3" Count="2" />
-      <LineId Id="7" Count="5" />
-      <LineId Id="14" Count="13" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="MAIN.Initialize">
-      <LineId Id="1" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

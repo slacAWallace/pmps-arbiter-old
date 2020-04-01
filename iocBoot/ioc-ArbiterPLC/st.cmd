@@ -17,8 +17,8 @@ dbLoadDatabase("$(ADS_IOC_TOP)/dbd/adsIoc.dbd")
 adsIoc_registerRecordDeviceDriver(pdbbase)
 
 epicsEnvSet("ASYN_PORT",     "ASYN_PLC")
-epicsEnvSet("IPADDR",        "172.21.148.135")
-epicsEnvSet("AMSID",         "172.21.148.135.1.1")
+epicsEnvSet("IPADDR",        "172.21.88.66")
+epicsEnvSet("AMSID",         "172.21.88.66.1.1")
 epicsEnvSet("IPPORT",        "851")
 
 adsAsynPortDriverConfigure("$(ASYN_PORT)","$(IPADDR)","$(AMSID)","$(IPPORT)", 1000, 0, 0, 50, 100, 1000, 0)
