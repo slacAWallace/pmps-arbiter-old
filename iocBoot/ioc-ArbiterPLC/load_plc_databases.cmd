@@ -1,0 +1,1 @@
+dbLoadRecords("ArbiterPLC.db", "PORT=ASYN_PLC,PREFIX=PREFIX:,IOCNAME=$(IOCNAME)")
