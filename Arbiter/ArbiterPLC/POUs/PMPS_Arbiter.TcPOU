@@ -41,18 +41,7 @@ VAR
     
     logging_active : BOOL;
     cycle : INT;
-    
-    {attribute 'pytmc' := '
-		pv: @(PREFIX):PhotonEnergy
-        link: ~
-	'}
-    fPhotonEnergy : REAL;
-    
-    {attribute 'pytmc' := '
-		pv: @(PREFIX):PhotonEnergySeverity
-        link: ~.SEVR
-	'}
-    iPhotonEnergySeverity : INT;
+
 	
 END_VAR
 ]]></Declaration>
