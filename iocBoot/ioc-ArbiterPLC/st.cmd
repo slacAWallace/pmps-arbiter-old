@@ -5,8 +5,8 @@
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
 epicsEnvSet("IOCNAME", "ioc-ArbiterPLC" )
-epicsEnvSet("ENGINEER", "root" )
-epicsEnvSet("LOCATION", "PREFIX" )
+epicsEnvSet("ENGINEER", "awallace" )
+epicsEnvSet("LOCATION", "PMPS:LFE" )
 epicsEnvSet("IOCSH_PS1", "$(IOCNAME)> " )
 
 # Run common startup commands for linux soft IOC's
@@ -54,8 +54,8 @@ adsAsynPortDriverConfigure("$(ASYN_PORT)", "$(IPADDR)", "$(AMSID)", "$(AMS_PORT)
 cd "$(ADS_IOC_TOP)/db"
 
 
-dbLoadRecords("iocSoft.db", "IOC=PREFIX")
-dbLoadRecords("save_restoreStatus.db", "P=PREFIX:")
+dbLoadRecords("iocSoft.db", "IOC=PMPS:LFE")
+dbLoadRecords("save_restoreStatus.db", "P=PMPS:LFE:")
 
 cd "$(IOC_TOP)"
 
@@ -67,7 +67,7 @@ cd "$(IOC_TOP)"
 set_savefile_path( "$(IOC_DATA)/$(IOC)/autosave" )
 set_requestfile_path( "$(IOC_TOP)/autosave" )
 
-save_restoreSet_status_prefix( "PREFIX:" )
+save_restoreSet_status_prefix( "PMPS:LFE:" )
 save_restoreSet_IncompleteSetsOk( 1 )
 save_restoreSet_DatedBackupFiles( 1 )
 set_pass0_restoreFile( "info_positions.sav" )
