@@ -9,3 +9,4 @@ _CompileInfo
 *.csv
 *.svd
 *.tclrs
+/Arbiter/ArbiterPLC/LineIDs.dbg
