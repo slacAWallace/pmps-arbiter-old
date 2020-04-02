@@ -1,1 +1,1 @@
-dbLoadRecords("ArbiterPLC.db", "PORT=ASYN_PLC,PREFIX=PREFIX:,IOCNAME=$(IOCNAME)")
+dbLoadRecords("ArbiterPLC.db", "PORT=ASYN_PLC,PREFIX=PMPS:LFE:,IOCNAME=$(IOCNAME)")
