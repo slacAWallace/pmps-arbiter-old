@@ -15,7 +15,7 @@ VAR
     
 	fbLogHandler : FB_LogHandler;
 	fbEcatDiag : FB_EcatDiagWrapper;
-
+(*
 	{attribute 'pytmc' := '
 		pv: Arbiter:Link:HGVPU
 		link: USEG:UNDH:
@@ -27,7 +27,7 @@ VAR
 		link: USEG:UNDS:
 	'}
 	fbSxu : FB_SXU;
-	
+*)	
 END_VAR
 ]]></Declaration>
     <Implementation>
