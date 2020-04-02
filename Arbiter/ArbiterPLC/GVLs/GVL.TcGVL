@@ -4,7 +4,7 @@
     <Declaration><![CDATA[
 VAR_GLOBAL
    {attribute 'pytmc' := '
-    pv: @(PREFIX):Arbiter:01
+    pv: @(PREFIX)Arbiter:01
     '}
 	g_fbArbiter1	:	FB_Arbiter(25);
 
@@ -13,7 +13,7 @@ VAR_GLOBAL
 	//Example implementation of the FFO
     
     {attribute 'pytmc' := '
-    pv: @(PREFIX):FFO:01
+    pv: @(PREFIX)FFO:01
     '}
 	{attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
 	g_FastFaultOutput1	:	FB_HardwareFFOutput;
