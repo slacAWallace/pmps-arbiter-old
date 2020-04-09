@@ -97,17 +97,17 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ArbiterPLC.tmc">
-      <SubType>Content</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <LibraryReference Include="LCLS General,newest,SLAC">
       <Namespace>LCLS_General</Namespace>
     </LibraryReference>
     <LibraryReference Include="PMPS,0.0.0,SLAC - LCLS">
       <Namespace>PMPS</Namespace>
     </LibraryReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ArbiterPLC.tmc">
+      <SubType>Content</SubType>
+    </None>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
