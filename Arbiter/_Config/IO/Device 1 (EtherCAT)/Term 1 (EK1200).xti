@@ -10,7 +10,7 @@
 		<Box File="PMPS_FFO.xti" Id="2">
 			<EtherCAT PortABoxInfo="#x01000001"/>
 		</Box>
-		<Box File="PMPS_BC.xti" Id="7">
+		<Box File="PMPS_Premp.xti" Id="7">
 			<EtherCAT PortABoxInfo="#x01000002"/>
 		</Box>
 		<Box File="Term 3 (EK1122).xti" Id="3">
