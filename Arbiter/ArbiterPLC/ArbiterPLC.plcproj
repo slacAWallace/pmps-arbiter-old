@@ -46,6 +46,12 @@
     <Compile Include="POUs\Accelerator\FB_UndulatorSegment.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\CurrentBPUpdate.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\CXDisplay.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Fast_Faults_Evaluate.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -59,6 +65,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PMPS_Arbiter.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Testing.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
