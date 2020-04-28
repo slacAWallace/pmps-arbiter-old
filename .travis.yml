@@ -4,7 +4,7 @@ sudo: false
 
 env:
   global:
-    - secure: "<ADD DOCTR DEPLOY KEY HERE>"
+    - secure: "zLx9227RhhY5I1H8vaiagBFUszhiK9W91gjnt3uRlBHtboeisaioDggJWbJeA5zwHe1OyyFmn/3JakMouQdNk5OcbeWQJbSREUzVuVw+7QDzeVOzxmU73qHd++XsKYCqMMtAgEtSS5jK/fYeCMGmDWhuQoBM/aL/lX+CKKvMj3/PHUKgoA4okqbu4WmS7PnUTM7g1BUqnF/ywPuaPlm5tYgxLjdKiAeiwem4Q/AWyvmDXI5DVrOtx/Y4Z/DOKB/08Nmwm0UQsCvtDKx90vUUEohkO9552sENRfqrIkmRSPoRwTVxSfIvmq/ZLQ8MEVo5WtEboM8sEIL28DLZZdzjiXdMVWTIJX5gyPArgspOh0CRDyEokGOdrrY/su3SefBKfoJQMInC7Irb6SijwbK0UghNvbXbBgAuKktE7u6TuTDjtM/fGggNk0SBp6ZKNPwnfrETMPi6t4sDkr0+rIciOwKFsjGEdtGV+owXe9xIgYOjorH1/MexFCdS4JNj/fauu5+FEr1252uOsQwumf/dTD7gFOQfL5D6+CG3Se6vndOiZjT0DKJJ8nb4lkipF9oQqvL//10+4T+fE50v2SD2bBzu2sDI4mne3stdxiXhEVP83ta7C6By53h4tfJHql5vOw98foGp+KV6QqNKfla5edGznzyfkBcr48KuGaNJBUI="
 
 matrix:
   include:
