@@ -20,9 +20,9 @@ VAR
 	The fb is called on each cycle and updates the arbiter with the current BP set requested 
 	from the subsystem PLC.*)
 	//<TODO> make this so it does input and output to the IF
-    {attribute 'pytmc' := '
-    pv: @(PREFIX)SubSysIO:PLC1
-    '}
+    (*{attribute 'pytmc' := '
+    pv: @(PREFIX):PLC1
+    '}*)
 	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[SubSysPLC1]^IO Inputs^RequestedBP; 
                                 .o_CurrentBP:=TIIB[SubSysPLC1]^IO Outputs^CurrentBP;
                                 .i_Connected:=TIIB[SubSysPLC1]^SYNC Inputs^External device not connected;
@@ -31,9 +31,9 @@ VAR
                                 '}
 	fbSubSys1_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF0F);
     
-	{attribute 'pytmc' := '
+	(*{attribute 'pytmc' := '
     pv: @(PREFIX)SubSysIO:PLC2
-    '}
+    '}*)
 	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[SubSysPLC2]^IO Inputs^RequestedBP;
                                 .i_xNewRequest:=TIIB[SubSysPLC2]^IO Inputs^xNewRequest; 
                                 .o_CurrentBP:=TIIB[SubSysPLC2]^IO Outputs^CurrentBP;
@@ -81,5 +81,9 @@ g_FastFaultOutput1.EvaluateVetos();
 g_FastFaultOutput1.ExecuteLogging();
 ]]></ST>
     </Implementation>
+    <LineIds Name="PMPS_Arbiter">
+      <LineId Id="3" Count="29" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
