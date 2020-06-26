@@ -20,6 +20,11 @@ VAR
 	'}
 	fbSxu : FB_SXU;
 *)	
+	{attribute 'pytmc' := '
+    pv: @(PREFIX)BeamParamCntl
+    '}
+	fbBPControl : FB_BPControlDevice(nID:=10);
+
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -39,6 +44,8 @@ MachineSimulation();
 Testing();
 ///////////////////////////////////////////////////	
 
+fbBPControl(Arbiter:=g_fbArbiter1);
+
 //Update current BP
 CurrentBPUpdate();
 
@@ -53,5 +60,14 @@ fbLogHandler();]]></ST>
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Action>
+    <LineIds Name="MAIN">
+      <LineId Id="3" Count="14" />
+      <LineId Id="51" Count="1" />
+      <LineId Id="18" Count="7" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.Initialize">
+      <LineId Id="1" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

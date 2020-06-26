@@ -55,25 +55,6 @@
 				</Properties>
 			</SubItem>
 		</DataType>
-		<DataType>
-			<Name GUID="{E96BEA56-6301-4A6A-BF6A-F08340C87594}" PersistentType="true">ST_PMPS_Attenuator_IO</Name>
-			<BitSize>48</BitSize>
-			<SubItem>
-				<Name>nAtt</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
-				<BitSize>16</BitSize>
-				<BitOffs>16</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>xAttOK</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
-				<BitSize>16</BitSize>
-				<BitOffs>32</BitOffs>
-			</SubItem>
-			<Hides>
-				<Hide GUID="{76269EAC-36F0-4513-B811-3725FD02409A}"/>
-			</Hides>
-		</DataType>
 	</DataTypes>
 	<Project ProjectGUID="{93521787-93A9-4579-9452-4FE41D8BA1BA}" TargetNetId="172.21.88.66.1.1" RelativeTargetNetId="true" RelativeIpAddresses="true" ShowHideConfigurations="#x306">
 		<System>
@@ -100,8 +81,7 @@
 		</Io>
 	</Project>
 	<Mappings>
-		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
-		<MappingInfo Identifier="{00000000-2002-0850-0120-500822000403}" Id="#x02030030"/>
-		<MappingInfo Identifier="{00000000-2002-0850-0120-500831000403}" Id="#x02030020"/>
+		<MappingInfo Identifier="{00000000-2002-0850-0120-500810000403}" Id="#x02030010"/>
+		<MappingInfo Identifier="{00000000-2002-0850-0120-500821000403}" Id="#x02030020"/>
 	</Mappings>
 </TcSmProject>

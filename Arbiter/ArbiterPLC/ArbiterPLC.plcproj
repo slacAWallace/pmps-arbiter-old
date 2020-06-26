@@ -55,7 +55,13 @@
     <Compile Include="POUs\Fast_Faults_Evaluate.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\FB_BPControlDevice.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\FB_eVSimulator.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\FB_StopperWatcher.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MachineSimulation.TcPOU">

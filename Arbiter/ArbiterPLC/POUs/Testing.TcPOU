@@ -14,13 +14,17 @@ END_VAR
       <ST><![CDATA[
 // Trip a fast fault periodically
 testFF(io_fbFFHWO:= g_FastFaultOutput1);
-testFF.i_xOK := (cycle mod 1000) = 0;
-cycle := cycle + 1;
+//testFF.i_xOK := (cycle mod 1000) = 0;
+//cycle := cycle + 1;
 
 //Periodically try to reset the photon energy fault.
 AttemptReset(IN:=PMPS_Arbiter.fbPhotonEnergyWatcher.xPhotonEnergyWithinBounds, Q=>GVL.AttemptReset);
 
 gAttemptReset(IN:=GVL.g_FastFaultOutput1.xOK, Q=>GVL.g_FastFaultOutput1.i_xReset);]]></ST>
     </Implementation>
+    <LineIds Name="Testing">
+      <LineId Id="3" Count="8" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

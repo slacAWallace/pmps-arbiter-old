@@ -16,6 +16,18 @@ VAR
     '}
     fbCuInterface	:	FB_CTLS_Outputs;
 	
+	// Stoppers
+	
+	{attribute 'TcLinkTo' := '
+				.i_StopperInLS:=TIIB[PPS_Stoppers]^Channel 1^ST1L0_PPS_IN;
+				.i_StopperOutLS:=TIIB[PPS_Stoppers]^Channel 2^ST1L0_PPS_OUT;
+				.q_StopperOUT_Relay:=TIIB[MPS_Relay]^Channel 1^ST1L0_RELAY_OUT;
+				.q_StopperIN_Relay:=TIIB[MPS_Relay]^Channel 2^ST1L0_RELAY_IN; 
+                                '}
+	st1l0Watcher : FB_StopperWatcher(
+		PMPS.L_Stopper.ST1L0,
+		'ST1L0');
+	
 	(* Subsystem requests use this FB and a pragma link to pass their requests to the arbiter.
 	The fb is called on each cycle and updates the arbiter with the current BP set requested 
 	from the subsystem PLC.*)
@@ -23,13 +35,13 @@ VAR
     (*{attribute 'pytmc' := '
     pv: @(PREFIX):PLC1
     '}*)
-	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[SubSysPLC1]^IO Inputs^RequestedBP; 
-                                .o_CurrentBP:=TIIB[SubSysPLC1]^IO Outputs^CurrentBP;
-                                .i_Connected:=TIIB[SubSysPLC1]^SYNC Inputs^External device not connected;
-                                .i_WcState:=TIIB[SubSysPLC1]^WcState^WcState;
-                                .i_TxPDOState:=TIIB[SubSysPLC1]^SYNC Inputs^TxPDO state;
+	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-lfe-motion]^IO Inputs^RequestedBP; 
+                                .o_CurrentBP:=TIIB[plc-lfe-motion]^IO Outputs^CurrentBP;
+                                .i_Connected:=TIIB[plc-lfe-motion]^SYNC Inputs^External device not connected;
+                                .i_WcState:=TIIB[plc-lfe-motion]^WcState^WcState;
+                                .i_TxPDOState:=TIIB[plc-lfe-motion]^SYNC Inputs^TxPDO state;
                                 '}
-	fbSubSys1_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF0F);
+	lfe_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF0F);
     
 	(*{attribute 'pytmc' := '
     pv: @(PREFIX)SubSysIO:PLC2
@@ -42,7 +54,7 @@ VAR
                                 .i_TxPDOState:=TIIB[SubSysPLC2]^SYNC Inputs^TxPDO state;
                                 .i_TxPDOToggle:=TIIB[SubSysPLC2]^SYNC Inputs^TxPDO toggle;
                                 '}
-	fbSubSys2_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF10);
+	//fbSubSys2_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF10);
     
     
 	
@@ -50,10 +62,13 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-// Updating arbiter with subsystem requests.
-fbSubSys1_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+// Watching stopper statuses
+st1l0Watcher();
 
-fbSubSys2_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+// Updating arbiter with subsystem requests.
+lfe_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+
+//fbSubSys2_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
 
 // Example with attenuator peel-off
 //////////////////////////////////
@@ -75,14 +90,20 @@ fbPhotonEnergyWatcher(i_stCurrentBeamParams	:= PMPS_GVL.stCurrentBeamParameters,
                     i_xReset := GVL.AttemptReset);
 
 // Evaluate fast fault vetos
-g_FastFaultOutput1.EvaluateVetos();
+g_FastFaultOutput1.EvaluateOverrides();
 
 // Send fast fault logs
 g_FastFaultOutput1.ExecuteLogging();
+
+
 ]]></ST>
     </Implementation>
     <LineIds Name="PMPS_Arbiter">
+      <LineId Id="145" Count="0" />
+      <LineId Id="143" Count="1" />
       <LineId Id="3" Count="29" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="79" Count="0" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
