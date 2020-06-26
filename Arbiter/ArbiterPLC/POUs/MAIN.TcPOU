@@ -7,7 +7,7 @@ VAR
     
 	fbLogHandler : FB_LogHandler;
 	fbEcatDiag : FB_EcatDiagWrapper;
-(*
+
 	{attribute 'pytmc' := '
 		pv: Arbiter:Link:HGVPU
 		link: USEG:UNDH:
@@ -19,7 +19,7 @@ VAR
 		link: USEG:UNDS:
 	'}
 	fbSxu : FB_SXU;
-*)	
+	
 	{attribute 'pytmc' := '
     pv: @(PREFIX)BeamParamCntl
     '}
@@ -44,6 +44,10 @@ MachineSimulation();
 Testing();
 ///////////////////////////////////////////////////	
 
+fbHgvpu();
+fbSxu();
+
+// Dummy device for controling pmps beam parameters
 fbBPControl(Arbiter:=g_fbArbiter1);
 
 //Update current BP
@@ -62,6 +66,10 @@ fbLogHandler();]]></ST>
     </Action>
     <LineIds Name="MAIN">
       <LineId Id="3" Count="14" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="79" Count="0" />
+      <LineId Id="81" Count="0" />
+      <LineId Id="78" Count="0" />
       <LineId Id="51" Count="1" />
       <LineId Id="18" Count="7" />
       <LineId Id="2" Count="0" />

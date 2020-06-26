@@ -358,6 +358,14 @@
 					<Type>UINT</Type>
 				</Var>
 				<Var>
+					<Name>PMPS_Arbiter.st1l0Watcher.i_StopperOutLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PMPS_Arbiter.st1l0Watcher.i_StopperInLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>PMPS_Arbiter.lfe_PMPS_IO.i_RequestedBP</Name>
 					<Comment>
 						<![CDATA[ Requested BP from subsystem]]>
@@ -518,14 +526,6 @@
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
-				<Var>
-					<Name>PMPS_Arbiter.st1l0Watcher.i_StopperOutLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PMPS_Arbiter.st1l0Watcher.i_StopperInLS</Name>
-					<Type>BOOL</Type>
-				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
@@ -543,6 +543,14 @@
 				<Var>
 					<Name>PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES</Name>
 					<Type GUID="{A5AC38E6-0DC4-889C-DC96-B6E74C453976}">ARRAY [1..3] OF BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PMPS_Arbiter.st1l0Watcher.q_StopperOUT_Relay</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PMPS_Arbiter.st1l0Watcher.q_StopperIN_Relay</Name>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>PMPS_Arbiter.lfe_PMPS_IO.o_CurrentBP</Name>
@@ -676,14 +684,6 @@
 							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
 						</Comment>
 					</SubVar>
-				</Var>
-				<Var>
-					<Name>PMPS_Arbiter.st1l0Watcher.q_StopperOUT_Relay</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>PMPS_Arbiter.st1l0Watcher.q_StopperIN_Relay</Name>
-					<Type>BOOL</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
