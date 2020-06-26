@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_StopperWatcher" Id="{a8ba1c9e-0ec9-4e64-9a98-24aa43e040d0}" SpecialFunc="None">
+    <Declaration><![CDATA[// Relays stopper state and sends a message when stopper state changes.
+FUNCTION_BLOCK FB_StopperWatcher
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	i_StopperOutLS AT %I* : BOOL;
+	i_StopperInLS AT %I* : BOOL;
+	
+	q_StopperOUT_Relay AT %Q* : BOOL;
+	q_StopperIN_Relay AT %Q* : BOOL;
+	
+	eStopper : PMPS.L_Stopper;
+	StopperName : STRING;
+	
+	// Logging
+	fbLogMsg : FB_LogMessage := (
+		eSubSystem := E_Subsystem.MPS);
+		
+	rtIn : R_TRIG;
+	rtOut : R_TRIG;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+rtIn(CLK := i_StopperInLS);
+rtOut(CLK := i_StopperOutLS);
+
+IF rtIn.Q THEN
+	fbLogMsg.sMsg := CONCAT(StopperName, ' moved IN');
+	fbLogMsg();
+ELSIF rtOut.Q THEN
+	fbLogMsg.sMsg := CONCAT(StopperName, ' moved OUT');
+	fbLogMsg();
+END_IF
+
+q_StopperOUT_Relay := i_StopperOutLS;
+q_StopperIN_Relay := i_StopperInLS;]]></ST>
+    </Implementation>
+    <Method Name="FB_init" Id="{811d265a-04cc-487e-95f6-4c1212df17e0}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+	Stopper : PMPS.L_Stopper;
+	sStopperName : STRING;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[eStopper := Stopper;
+StopperName := sStopperName;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_StopperWatcher">
+      <LineId Id="27" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="46" Count="1" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="32" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_StopperWatcher.FB_init">
+      <LineId Id="7" Count="0" />
+      <LineId Id="10" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
