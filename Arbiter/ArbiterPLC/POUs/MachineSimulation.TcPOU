@@ -13,7 +13,7 @@ fbeVSimulator();
 
 // Machine simulator
 fbMachine(
-	i_stAssertedParams := ReqBP,
+	i_stAssertedParams := PMPS_GVL.stRequestedBeamParameters,
 	q_stMachineParams => PMPS_GVL.stCurrentBeamParameters,
 	i_xFault	:= NOT GVL.g_FastFaultOutput1.q_xFastFaultOut
 	);

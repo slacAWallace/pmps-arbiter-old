@@ -38,16 +38,16 @@
 		<Image Id="1" AddrType="9" ImageType="3">
 			<Name>Image</Name>
 		</Image>
-		<Image Id="3" AddrType="10" ImageType="3">
-			<Name>Image-2</Name>
-		</Image>
-		<Box File="Term 1 (EK1200).xti" Id="1">
+		<Box File="Term 12 (EK1200).xti" Id="5">
 			<EtherCAT PortABoxInfo="#x00ffffff"/>
 		</Box>
-		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="4" MaxSwitchFrames="160">
+		<Box File="Box 23 (CU1128).xti" Id="23">
+			<EtherCAT PortABoxInfo="#x01000016"/>
+		</Box>
+		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="5" MaxSwitchFrames="180">
+			<Redundancy Mode="2" AdapterReference="true" PreviousPort="33554461"/>
 			<SyncUnit Name="alt" NoDeleteIfUnused="true"/>
-			<SyncUnit Name="SubSys1" NoDeleteIfUnused="true"/>
-			<SyncUnit Name="SubSys2" NoDeleteIfUnused="true"/>
+			<SyncUnit Name="lfe" NoDeleteIfUnused="true"/>
 		</EtherCAT>
 	</Device>
 </TcSmItem>

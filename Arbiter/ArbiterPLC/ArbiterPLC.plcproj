@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
@@ -36,10 +37,31 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Accelerator\FB_Hgvpu.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Accelerator\FB_SXU.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Accelerator\FB_UndulatorSegment.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\CurrentBPUpdate.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\CXDisplay.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Fast_Faults_Evaluate.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\FB_BPControlDevice.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\FB_eVSimulator.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\FB_StopperWatcher.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MachineSimulation.TcPOU">
@@ -51,11 +73,15 @@
     <Compile Include="POUs\PMPS_Arbiter.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Testing.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
     <Folder Include="ImplicitChecks" />
+    <Folder Include="POUs\Accelerator" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
@@ -86,17 +112,17 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ArbiterPLC.tmc">
-      <SubType>Content</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <LibraryReference Include="LCLS General,0.0.0,SLAC">
+    <LibraryReference Include="LCLS General,newest,SLAC">
       <Namespace>LCLS_General</Namespace>
     </LibraryReference>
     <LibraryReference Include="PMPS,0.0.0,SLAC - LCLS">
       <Namespace>PMPS</Namespace>
     </LibraryReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ArbiterPLC.tmc">
+      <SubType>Content</SubType>
+    </None>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>

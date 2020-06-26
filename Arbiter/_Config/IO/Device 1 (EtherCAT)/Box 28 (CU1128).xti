@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CFlbTermDef" SubType="9099">
+	<ImageDatas>
+		<ImageData Id="1000">424df60000000000000076000000280000001000000010000000010004000000000080000000120b0000120b00001000000010000000411f91007f7f7f0099999900a3a3cf00b0003400d0d0d000dbdbdb00ffffff00c0c0c0000000ff0000ff000000ffff00ff000000ff00ff00ffff0000ffffff00dddddddddddddddddd1616161616161dd26262626262621dd25546666666623d4444446666333333d26646666666623dd20666666666623d0000006666333333d20666666666623dd20666666666623d0000006666333333d20666666666623dd23666666666623d3333336666333333d23666666666623dd2222222222222dd</ImageData>
+	</ImageDatas>
+	<Box Id="28" BoxType="9099">
+		<Name>__FILENAME__</Name>
+		<ImageId>1000</ImageId>
+		<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x04685432" RevisionNo="#x00010000" PortPhys="4881" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="CU1128 6x EtherCAT junction" Desc="CU1128"/>
+		<Box File="Box 29 (EL6695-0002).xti" Id="29">
+			<EtherCAT PortABoxInfo="#x0300001c"/>
+		</Box>
+		<Box File="Box 30 (EL6695-0002).xti" Id="30">
+			<EtherCAT PortABoxInfo="#x0100001d"/>
+		</Box>
+		<Box File="Box 31 (EL6692).xti" Id="31">
+			<EtherCAT PortABoxInfo="#x0100001e"/>
+		</Box>
+		<Box File="Box 32 (EL6692).xti" Id="32">
+			<EtherCAT PortABoxInfo="#x0100001f"/>
+		</Box>
+		<Box File="Term 33 (CU1128-B).xti" Id="33">
+			<EtherCAT PortABoxInfo="#x0200001c"/>
+		</Box>
+		<Box File="Term 34 (CU1128-C).xti" Id="34">
+			<EtherCAT PortABoxInfo="#x02000021"/>
+		</Box>
+		<Box File="Term 36 (EL9010).xti" Id="36">
+			<EtherCAT/>
+		</Box>
+	</Box>
+</TcSmItem>

@@ -10,14 +10,11 @@
 		<Box File="PMPS_FFO.xti" Id="2">
 			<EtherCAT PortABoxInfo="#x01000001"/>
 		</Box>
-		<Box File="PMPS_BC.xti" Id="7">
+		<Box File="PMPS_Premp.xti" Id="7">
 			<EtherCAT PortABoxInfo="#x01000002"/>
 		</Box>
-		<Box File="PMPS_CLTS.xti" Id="8">
-			<EtherCAT PortABoxInfo="#x01000007"/>
-		</Box>
 		<Box File="Term 3 (EK1122).xti" Id="3">
-			<EtherCAT PortABoxInfo="#x01000008"/>
+			<EtherCAT PortABoxInfo="#x01000007"/>
 		</Box>
 		<Box File="Term 6 (EK1110).xti" Id="6">
 			<EtherCAT PortABoxInfo="#x02000003"/>

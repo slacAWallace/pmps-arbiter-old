@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="Testing" Id="{654a8ad9-c457-42d1-8273-f14181473121}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Testing
+VAR
+    AttemptReset : TON := (PT:=T#1s);
+    gAttemptReset : TON := (PT:=T#500ms);
+        
+    testFF : FB_FastFault;
+    cycle : INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+// Trip a fast fault periodically
+testFF(io_fbFFHWO:= g_FastFaultOutput1);
+//testFF.i_xOK := (cycle mod 1000) = 0;
+//cycle := cycle + 1;
+
+//Periodically try to reset the photon energy fault.
+AttemptReset(IN:=PMPS_Arbiter.fbPhotonEnergyWatcher.xPhotonEnergyWithinBounds, Q=>GVL.AttemptReset);
+
+gAttemptReset(IN:=GVL.g_FastFaultOutput1.xOK, Q=>GVL.g_FastFaultOutput1.i_xReset);]]></ST>
+    </Implementation>
+    <LineIds Name="Testing">
+      <LineId Id="3" Count="8" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

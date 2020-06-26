@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="CXDisplay" Id="{4c221802-b324-4b97-bab3-03da09310aa1}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM CXDisplay
+VAR
+    DisplayStats : FB_CXSetTextDisplayUSB := (nPort:=28928);
+    fbFormat   : FB_FormatString;
+    bError     : BOOL;
+    nErrID     : UDINT;
+    sOut       : T_MaxString;   
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*
+DisplayStats.bExecute S= NOT DisplayStats.bBusy AND NOT DisplayStats.bError;
+DisplayStats.bExecute R= DisplayStats.bBusy OR DisplayStats.bError;
+
+DisplayStats.sLine1 := 'PMPS-ARBITER-K';
+fbFormat(sFormat := 'Fast Faults: %d', arg1:=F_ULINT(PMPS_GVL.AccumulatedFF), sOut=>DisplayStats.sLine2, bError => bError, nErrID => nErrID ); 
+
+DisplayStats(eMode:=E_CX2100_DisplayModesWr.eCX2100_WriteLines);
+*)]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

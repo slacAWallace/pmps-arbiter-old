@@ -4,19 +4,26 @@
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
 	Initialize	:	BOOL := TRUE;
-	
-	AttemptReset : TON := (PT:=T#500ms);
     
-    DisplayStats : FB_CXSetTextDisplayUSB := (nPort:=28928);
-    fbFormat   : FB_FormatString;
-    bError     : BOOL;
-    nErrID     : UDINT;
-    sOut       : T_MaxString;   
-    
-    {attribute 'pytmc' := '
-		pv: TEST:LOGHANDLER:
+	fbLogHandler : FB_LogHandler;
+	fbEcatDiag : FB_EcatDiagWrapper;
+
+	{attribute 'pytmc' := '
+		pv: Arbiter:Link:HGVPU
+		link: USEG:UNDH:
 	'}
-	fbLogHandler	: FB_LogHandler;
+	fbHgvpu : FB_Hgvpu;
+	
+	{attribute 'pytmc' := '
+		pv: Arbiter:Link:SXU
+		link: USEG:UNDS:
+	'}
+	fbSxu : FB_SXU;
+	
+	{attribute 'pytmc' := '
+    pv: @(PREFIX)BeamParamCntl
+    '}
+	fbBPControl : FB_BPControlDevice(nID:=10);
 
 END_VAR
 ]]></Declaration>
@@ -24,26 +31,30 @@ END_VAR
       <ST><![CDATA[//Arbiter PLC
 
 IF Initialize THEN
-
 	Initialize := FALSE;
 END_IF
 
+// Ethercat Diagnostics
+fbEcatDiag();
+
+///////////////////////////////////////////////////
+// This code should be disabled or removed in deployment
+// Might have a switch to change to simulation mode
 MachineSimulation();
-		
+Testing();
+///////////////////////////////////////////////////	
+
+fbHgvpu();
+fbSxu();
+
+// Dummy device for controling pmps beam parameters
+fbBPControl(Arbiter:=g_fbArbiter1);
+
+//Update current BP
+CurrentBPUpdate();
+
+// PMPS Functionality	
 PMPS_Arbiter();
-
-
-AttemptReset(IN:=GVL.g_FastFaultOutput1.xOK, Q=>GVL.g_FastFaultOutput1.i_xReset);
-
-
-DisplayStats.bExecute S= NOT DisplayStats.bBusy AND NOT DisplayStats.bError;
-DisplayStats.bExecute R= DisplayStats.bBusy OR DisplayStats.bError;
-
-DisplayStats.sLine1 := 'PMPS-ARBITER-K';
-fbFormat(sFormat := 'Fast Faults: %d', arg1:=F_ULINT(PMPS_GVL.AccumulatedFF), sOut=>DisplayStats.sLine2, bError => bError, nErrID => nErrID ); 
-
-DisplayStats(eMode:=E_CX2100_DisplayModesWr.eCX2100_WriteLines);
-
 
 
 fbLogHandler();]]></ST>
@@ -53,5 +64,18 @@ fbLogHandler();]]></ST>
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Action>
+    <LineIds Name="MAIN">
+      <LineId Id="3" Count="14" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="79" Count="0" />
+      <LineId Id="81" Count="0" />
+      <LineId Id="78" Count="0" />
+      <LineId Id="51" Count="1" />
+      <LineId Id="18" Count="7" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.Initialize">
+      <LineId Id="1" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
